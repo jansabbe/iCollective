@@ -22,6 +22,11 @@
 		3923D757A0A4204A4B0F63D0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3923D757A0A4204A4B0F63CF /* InfoPlist.strings */; };
 		3923D757A0A4204A4B0F63D3 /* iCollectiveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3923D757A0A4204A4B0F63D2 /* iCollectiveTests.m */; };
 		3923D757A0A4204A4B0F63D7 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 3923D757A0A4204A4B0F63D6 /* README */; };
+		3923D757A0A4204A4B0F63D9 /* SocialtextHTTPConnectionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3923D757A0A4204A4B0F63D8 /* SocialtextHTTPConnectionTest.m */; };
+		3923D757A0A4204A4B0F63DC /* SocialtextHttpConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 3923D757A0A4204A4B0F63DB /* SocialtextHttpConnection.m */; };
+		3923D757A0A4204A4B0F63E0 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 3923D757A0A4204A4B0F63DF /* NSData+Base64.m */; };
+		3923D757A0A4204A4B0F63E2 /* NSMutableURLRequest+Authentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 3923D757A0A4204A4B0F63E1 /* NSMutableURLRequest+Authentication.m */; };
+		3923D757A0A4204A4B0F63E5 /* NSMutableURLRequestAuthenticationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3923D757A0A4204A4B0F63E4 /* NSMutableURLRequestAuthenticationTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +61,16 @@
 		3923D757A0A4204A4B0F63D1 /* iCollectiveTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iCollectiveTests.h; sourceTree = "<group>"; };
 		3923D757A0A4204A4B0F63D2 /* iCollectiveTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iCollectiveTests.m; sourceTree = "<group>"; };
 		3923D757A0A4204A4B0F63D6 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		3923D757A0A4204A4B0F63D8 /* SocialtextHTTPConnectionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialtextHTTPConnectionTest.m; sourceTree = "<group>"; };
+		3923D757A0A4204A4B0F63DA /* SocialtextHTTPConnectionTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialtextHTTPConnectionTest.h; sourceTree = "<group>"; };
+		3923D757A0A4204A4B0F63DB /* SocialtextHttpConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialtextHttpConnection.m; sourceTree = "<group>"; };
+		3923D757A0A4204A4B0F63DD /* SocialtextHttpConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialtextHttpConnection.h; sourceTree = "<group>"; };
+		3923D757A0A4204A4B0F63DE /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		3923D757A0A4204A4B0F63DF /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		3923D757A0A4204A4B0F63E1 /* NSMutableURLRequest+Authentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+Authentication.m"; sourceTree = "<group>"; };
+		3923D757A0A4204A4B0F63E3 /* NSMutableURLRequest+Authentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+Authentication.h"; sourceTree = "<group>"; };
+		3923D757A0A4204A4B0F63E4 /* NSMutableURLRequestAuthenticationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSMutableURLRequestAuthenticationTest.m; sourceTree = "<group>"; };
+		3923D757A0A4204A4B0F63E6 /* NSMutableURLRequestAuthenticationTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSMutableURLRequestAuthenticationTest.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +177,12 @@
 		3923D757A0A4204A4B0F63D4 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				3923D757A0A4204A4B0F63E3 /* NSMutableURLRequest+Authentication.h */,
+				3923D757A0A4204A4B0F63E1 /* NSMutableURLRequest+Authentication.m */,
+				3923D757A0A4204A4B0F63DF /* NSData+Base64.m */,
+				3923D757A0A4204A4B0F63DE /* NSData+Base64.h */,
+				3923D757A0A4204A4B0F63DD /* SocialtextHttpConnection.h */,
+				3923D757A0A4204A4B0F63DB /* SocialtextHttpConnection.m */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -169,6 +190,10 @@
 		3923D757A0A4204A4B0F63D5 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				3923D757A0A4204A4B0F63E6 /* NSMutableURLRequestAuthenticationTest.h */,
+				3923D757A0A4204A4B0F63E4 /* NSMutableURLRequestAuthenticationTest.m */,
+				3923D757A0A4204A4B0F63DA /* SocialtextHTTPConnectionTest.h */,
+				3923D757A0A4204A4B0F63D8 /* SocialtextHTTPConnectionTest.m */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -281,6 +306,9 @@
 				3923D757A0A4204A4B0F63AE /* main.m in Sources */,
 				3923D757A0A4204A4B0F63B2 /* ICAppDelegate.m in Sources */,
 				3923D757A0A4204A4B0F63BB /* ICViewController.m in Sources */,
+				3923D757A0A4204A4B0F63DC /* SocialtextHttpConnection.m in Sources */,
+				3923D757A0A4204A4B0F63E0 /* NSData+Base64.m in Sources */,
+				3923D757A0A4204A4B0F63E2 /* NSMutableURLRequest+Authentication.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +317,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3923D757A0A4204A4B0F63D3 /* iCollectiveTests.m in Sources */,
+				3923D757A0A4204A4B0F63D9 /* SocialtextHTTPConnectionTest.m in Sources */,
+				3923D757A0A4204A4B0F63E5 /* NSMutableURLRequestAuthenticationTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
