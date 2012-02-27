@@ -13,9 +13,9 @@
 @property(nonatomic, strong, readonly) void (^callback)(NSURLResponse *, NSData *data, NSError *error);
 @property(nonatomic, readonly) BOOL isReceiving;
 
-+ (SocialtextHttpConnection *)socialtextHttpConnection:(NSString *)relativeUrl andExecute:(void (^)(NSURLResponse *, NSData *, NSError *))successCallback;
++ (SocialtextHttpConnection *)socialtextHttpConnection:(NSString *)relativeUrl username:(NSString *)username password:(NSString *)password callback:(void (^)(NSURLResponse *, NSData *, NSError *))handler;
 
-- (SocialtextHttpConnection *)initWithUrl:(NSURL *)url callback:(void (^)(NSURLResponse *, NSData *, NSError *))callback;
+- (SocialtextHttpConnection *)initWithUrl:(NSURL *)url username:(NSString *)username password:(NSString *)password callback:(void (^)(NSURLResponse *, NSData *, NSError *))successCallback;
 
 - (void)sendGet;
 

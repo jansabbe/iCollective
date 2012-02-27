@@ -10,41 +10,44 @@
 
 
 #define SOCIALTEXT_BASE_URL [NSURL URLWithString:@"https://cegeka.socialtext.net"]
-#define TODO_USERNAME @"DUMMY"
-#define TODO_PASSWORD @"DUMMY"
 
 @implementation SocialtextHttpConnection {
-
+    NSString *_username;
+    NSString *_password;
 }
 
 @synthesize url = _url;
 @synthesize callback = _callback;
 @synthesize isReceiving = _receiving;
 
-+ (SocialtextHttpConnection *)socialtextHttpConnection:(NSString *)relativeUrl andExecute:(void (^)(NSURLResponse *, NSData *, NSError *))handler {
++ (SocialtextHttpConnection *)socialtextHttpConnection:(NSString *)relativeUrl username:(NSString *)username password:(NSString *)password callback:(void (^)(NSURLResponse *, NSData *, NSError *))handler {
     NSURL *url = [NSURL URLWithString:relativeUrl relativeToURL:SOCIALTEXT_BASE_URL];
-    return [[SocialtextHttpConnection alloc] initWithUrl:url callback:handler];
+    return [[SocialtextHttpConnection alloc] initWithUrl:url username:username password:password callback:handler];
 }
 
-- (SocialtextHttpConnection *)initWithUrl:(NSURL *)url callback:(void (^)(NSURLResponse *, NSData *, NSError *))successCallback {
+- (SocialtextHttpConnection *)initWithUrl:(NSURL *)url username:(NSString *)username password:(NSString *)password callback:(void (^)(NSURLResponse *, NSData *, NSError *))successCallback {
     self = [super init];
     if (self) {
         _url = url;
         _callback = successCallback;
+        _username = username;
+        _password = password;
     }
     return self;
 }
 
-
 - (void)sendGet {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:self.url];
     [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    [request basicAuthenticationWithUsername:TODO_USERNAME password:TODO_PASSWORD];
+    [request basicAuthenticationWithUsername:_username password:_password];
     _receiving = YES;
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
         _receiving = NO;
-        NSLog(@"error %@", error);
-        _callback(response, data, error);
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        if (_callback) {
+            _callback(response, data, error);
+        }
     }];
 }
 @end
