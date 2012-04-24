@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="iCollectiveTests" type="OCUnitRunConfiguration" factoryName="OCUnit" SCHEME_NAME="iCollectiveTests" PROJECT_NAME="iCollective" TARGET_NAME="iCollectiveTests" CONFIG_NAME="Debug" DESTINATION_ID="iphonesimulator_5.1_1" DEBUGGER="GDB" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+    <envs />
+    <RunnerSettings RunnerId="AppRunner" />
+    <ConfigurationWrapper RunnerId="AppRunner" />
+    <method />
+  </configuration>
+</component>
