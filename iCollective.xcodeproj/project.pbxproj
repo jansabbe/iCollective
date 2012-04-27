@@ -21,10 +21,6 @@
 		3923D757A0A4204A4B0F63C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3923D757A0A4204A4B0F63A3 /* Foundation.framework */; };
 		3923D757A0A4204A4B0F63D0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3923D757A0A4204A4B0F63CF /* InfoPlist.strings */; };
 		3923D757A0A4204A4B0F63D7 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 3923D757A0A4204A4B0F63D6 /* README */; };
-		3923D757A0A4204A4B0F63D9 /* SocialtextHTTPConnectionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3923D757A0A4204A4B0F63D8 /* SocialtextHTTPConnectionTest.m */; };
-		3923D757A0A4204A4B0F63DC /* SocialtextHttpConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 3923D757A0A4204A4B0F63DB /* SocialtextHttpConnection.m */; };
-		3923D757A0A4204A4B0F63E2 /* NSMutableURLRequest+Authentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 3923D757A0A4204A4B0F63E1 /* NSMutableURLRequest+Authentication.m */; };
-		3923D757A0A4204A4B0F63E5 /* NSMutableURLRequestAuthenticationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3923D757A0A4204A4B0F63E4 /* NSMutableURLRequestAuthenticationTest.m */; };
 		56208AD6154A894400239D15 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56208AB8154A867E00239D15 /* libRestKit.a */; };
 		56208AD7154A895400239D15 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56208AC5154A87D900239D15 /* CFNetwork.framework */; };
 		56208AD8154A896100239D15 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56208AC7154A87E700239D15 /* MobileCoreServices.framework */; };
@@ -113,14 +109,6 @@
 		3923D757A0A4204A4B0F63CD /* iCollectiveTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "iCollectiveTests-Info.plist"; sourceTree = "<group>"; };
 		3923D757A0A4204A4B0F63CE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3923D757A0A4204A4B0F63D6 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
-		3923D757A0A4204A4B0F63D8 /* SocialtextHTTPConnectionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialtextHTTPConnectionTest.m; sourceTree = "<group>"; };
-		3923D757A0A4204A4B0F63DA /* SocialtextHTTPConnectionTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialtextHTTPConnectionTest.h; sourceTree = "<group>"; };
-		3923D757A0A4204A4B0F63DB /* SocialtextHttpConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialtextHttpConnection.m; sourceTree = "<group>"; };
-		3923D757A0A4204A4B0F63DD /* SocialtextHttpConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialtextHttpConnection.h; sourceTree = "<group>"; };
-		3923D757A0A4204A4B0F63E1 /* NSMutableURLRequest+Authentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+Authentication.m"; sourceTree = "<group>"; };
-		3923D757A0A4204A4B0F63E3 /* NSMutableURLRequest+Authentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+Authentication.h"; sourceTree = "<group>"; };
-		3923D757A0A4204A4B0F63E4 /* NSMutableURLRequestAuthenticationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSMutableURLRequestAuthenticationTest.m; sourceTree = "<group>"; };
-		3923D757A0A4204A4B0F63E6 /* NSMutableURLRequestAuthenticationTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSMutableURLRequestAuthenticationTest.h; sourceTree = "<group>"; };
 		56208AAC154A867E00239D15 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = Frameworks/RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
 		56208AC5154A87D900239D15 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		56208AC7154A87E700239D15 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -262,10 +250,6 @@
 			children = (
 				56B5D3A91525F2F2007982F6 /* ICRestKitConfiguration.h */,
 				56B5D3A91525F2F2007982F4 /* ICRestKitConfiguration.m */,
-				3923D757A0A4204A4B0F63E3 /* NSMutableURLRequest+Authentication.h */,
-				3923D757A0A4204A4B0F63E1 /* NSMutableURLRequest+Authentication.m */,
-				3923D757A0A4204A4B0F63DD /* SocialtextHttpConnection.h */,
-				3923D757A0A4204A4B0F63DB /* SocialtextHttpConnection.m */,
 				56B5D3971525EBA6007982F0 /* DataModel.xcdatamodeld */,
 			);
 			path = Infrastructure;
@@ -278,10 +262,6 @@
 				56B5D3A91525F2F2007982F1 /* ICRestKitConfigurationTest.m */,
 				56B5D3A01525ECDC007982F3 /* DataModelTest.h */,
 				56B5D3A01525ECDC007982F1 /* DataModelTest.m */,
-				3923D757A0A4204A4B0F63E6 /* NSMutableURLRequestAuthenticationTest.h */,
-				3923D757A0A4204A4B0F63E4 /* NSMutableURLRequestAuthenticationTest.m */,
-				3923D757A0A4204A4B0F63DA /* SocialtextHTTPConnectionTest.h */,
-				3923D757A0A4204A4B0F63D8 /* SocialtextHTTPConnectionTest.m */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -460,8 +440,6 @@
 				3923D757A0A4204A4B0F63AE /* main.m in Sources */,
 				3923D757A0A4204A4B0F63B2 /* ICAppDelegate.m in Sources */,
 				3923D757A0A4204A4B0F63BB /* ICViewController.m in Sources */,
-				3923D757A0A4204A4B0F63DC /* SocialtextHttpConnection.m in Sources */,
-				3923D757A0A4204A4B0F63E2 /* NSMutableURLRequest+Authentication.m in Sources */,
 				56B5D3991525EBA6007982F0 /* DataModel.xcdatamodeld in Sources */,
 				56B5D39E1525EC7B007982F0 /* ICSignal.m in Sources */,
 				56B5D3A91525F2F2007982F5 /* ICRestKitConfiguration.m in Sources */,
@@ -472,8 +450,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3923D757A0A4204A4B0F63D9 /* SocialtextHTTPConnectionTest.m in Sources */,
-				3923D757A0A4204A4B0F63E5 /* NSMutableURLRequestAuthenticationTest.m in Sources */,
 				56B5D3A01525ECDC007982F2 /* DataModelTest.m in Sources */,
 				56B5D3A91525F2F2007982F2 /* ICRestKitConfigurationTest.m in Sources */,
 			);

@@ -17,7 +17,7 @@
     [RKClient setSharedClient:[RKClient clientWithBaseURLString:@"https://cegeka.socialtext.net/data/"]];
     [[RKClient sharedClient] setAuthenticationType:RKRequestAuthenticationTypeHTTPBasic];
     [[RKClient sharedClient] setUsername:@"jan.sabbe@cegeka.be"];
-    [[RKClient sharedClient] setPassword:@"BLABLA"];
+    [[RKClient sharedClient] setPassword:@"SJOKOE"];
     return [RKClient sharedClient];
 
 }
