@@ -6,7 +6,7 @@
 
 
 #import "NSMutableURLRequest+Authentication.h"
-#import "NSData+Base64.h"
+#import <RestKit/NSData+Base64.h>
 
 
 

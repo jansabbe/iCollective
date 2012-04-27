@@ -7,6 +7,7 @@
 //
 
 #import "ICAppDelegate.h"
+#import <RestKit/RestKit.h>
 
 @implementation ICAppDelegate
 
