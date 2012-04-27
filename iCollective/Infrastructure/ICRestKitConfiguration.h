@@ -10,8 +10,8 @@
 @class RKClient;
 @class RKObjectManager;
 static NSString *const baseurl = @"https://cegeka.socialtext.net/data/";
-static NSString *const username = @"BLAB"; //TODO
-static NSString *const password = @"BLUB"; //TODO
+static NSString *const username = @"tom.toutenel@cegeka.be"; //TODO
+static NSString *const password = @"albert0B"; //TODO
 
 
 @interface ICRestKitConfiguration : NSObject

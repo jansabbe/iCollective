@@ -15,7 +15,7 @@
 		3923D757A0A4204A4B0F63B2 /* ICAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3923D757A0A4204A4B0F63B1 /* ICAppDelegate.m */; };
 		3923D757A0A4204A4B0F63B5 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3923D757A0A4204A4B0F63B4 /* MainStoryboard_iPhone.storyboard */; };
 		3923D757A0A4204A4B0F63B8 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3923D757A0A4204A4B0F63B7 /* MainStoryboard_iPad.storyboard */; };
-		3923D757A0A4204A4B0F63BB /* ICViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3923D757A0A4204A4B0F63BA /* ICViewController.m */; };
+		3923D757A0A4204A4B0F63BB /* ICSignalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3923D757A0A4204A4B0F63BA /* ICSignalTableViewController.m */; };
 		3923D757A0A4204A4B0F63C6 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3923D757A0A4204A4B0F63C5 /* SenTestingKit.framework */; };
 		3923D757A0A4204A4B0F63C7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3923D757A0A4204A4B0F63A1 /* UIKit.framework */; };
 		3923D757A0A4204A4B0F63C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3923D757A0A4204A4B0F63A3 /* Foundation.framework */; };
@@ -105,8 +105,8 @@
 		3923D757A0A4204A4B0F63B1 /* ICAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ICAppDelegate.m; sourceTree = "<group>"; };
 		3923D757A0A4204A4B0F63B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		3923D757A0A4204A4B0F63B6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		3923D757A0A4204A4B0F63B9 /* ICViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ICViewController.h; sourceTree = "<group>"; };
-		3923D757A0A4204A4B0F63BA /* ICViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ICViewController.m; sourceTree = "<group>"; };
+		3923D757A0A4204A4B0F63B9 /* ICSignalTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ICSignalTableViewController.h; sourceTree = "<group>"; };
+		3923D757A0A4204A4B0F63BA /* ICSignalTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ICSignalTableViewController.m; sourceTree = "<group>"; };
 		3923D757A0A4204A4B0F63BC /* iCollectiveTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iCollectiveTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3923D757A0A4204A4B0F63C5 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		3923D757A0A4204A4B0F63CD /* iCollectiveTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "iCollectiveTests-Info.plist"; sourceTree = "<group>"; };
@@ -213,8 +213,8 @@
 			isa = PBXGroup;
 			children = (
 				56B5D39B1525EC46007982F0 /* Domain */,
-				3923D757A0A4204A4B0F63BA /* ICViewController.m */,
-				3923D757A0A4204A4B0F63B9 /* ICViewController.h */,
+				3923D757A0A4204A4B0F63BA /* ICSignalTableViewController.m */,
+				3923D757A0A4204A4B0F63B9 /* ICSignalTableViewController.h */,
 				3923D757A0A4204A4B0F63B7 /* MainStoryboard_iPad.storyboard */,
 				3923D757A0A4204A4B0F63B4 /* MainStoryboard_iPhone.storyboard */,
 				3923D757A0A4204A4B0F63B1 /* ICAppDelegate.m */,
@@ -454,7 +454,7 @@
 			files = (
 				3923D757A0A4204A4B0F63AE /* main.m in Sources */,
 				3923D757A0A4204A4B0F63B2 /* ICAppDelegate.m in Sources */,
-				3923D757A0A4204A4B0F63BB /* ICViewController.m in Sources */,
+				3923D757A0A4204A4B0F63BB /* ICSignalTableViewController.m in Sources */,
 				56B5D3991525EBA6007982F0 /* DataModel.xcdatamodeld in Sources */,
 				56B5D39E1525EC7B007982F0 /* ICSignal.m in Sources */,
 				56B5D3A91525F2F2007982F5 /* ICRestKitConfiguration.m in Sources */,
