@@ -35,6 +35,9 @@
 		56B5D3A91525F2F2007982F0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B5D39F1525ECDC007982F0 /* CoreData.framework */; };
 		56B5D3A91525F2F2007982F2 /* ICRestKitConfigurationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F2007982F1 /* ICRestKitConfigurationTest.m */; };
 		56B5D3A91525F2F2007982F5 /* ICRestKitConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F2007982F4 /* ICRestKitConfiguration.m */; };
+		56B5D3A91525F2F2007982F8 /* ICRestKitModelConfigurationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F2007982F7 /* ICRestKitModelConfigurationTest.m */; };
+		56B5D3A91525F2F2007982FE /* ICSimpleSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F2007982FD /* ICSimpleSignal.m */; };
+		56B5D3A91525F2F200798301 /* ICSimplePerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F200798300 /* ICSimplePerson.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +129,12 @@
 		56B5D3A91525F2F2007982F3 /* ICRestKitConfigurationTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICRestKitConfigurationTest.h; sourceTree = "<group>"; };
 		56B5D3A91525F2F2007982F4 /* ICRestKitConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICRestKitConfiguration.m; sourceTree = "<group>"; };
 		56B5D3A91525F2F2007982F6 /* ICRestKitConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICRestKitConfiguration.h; sourceTree = "<group>"; };
+		56B5D3A91525F2F2007982F7 /* ICRestKitModelConfigurationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICRestKitModelConfigurationTest.m; sourceTree = "<group>"; };
+		56B5D3A91525F2F2007982F9 /* ICRestKitModelConfigurationTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICRestKitModelConfigurationTest.h; sourceTree = "<group>"; };
+		56B5D3A91525F2F2007982FD /* ICSimpleSignal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSimpleSignal.m; sourceTree = "<group>"; };
+		56B5D3A91525F2F2007982FF /* ICSimpleSignal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSimpleSignal.h; sourceTree = "<group>"; };
+		56B5D3A91525F2F200798300 /* ICSimplePerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSimplePerson.m; sourceTree = "<group>"; };
+		56B5D3A91525F2F200798302 /* ICSimplePerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSimplePerson.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +267,8 @@
 		3923D757A0A4204A4B0F63D5 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				56B5D3A91525F2F2007982F9 /* ICRestKitModelConfigurationTest.h */,
+				56B5D3A91525F2F2007982F7 /* ICRestKitModelConfigurationTest.m */,
 				56B5D3A91525F2F2007982F3 /* ICRestKitConfigurationTest.h */,
 				56B5D3A91525F2F2007982F1 /* ICRestKitConfigurationTest.m */,
 				56B5D3A01525ECDC007982F3 /* DataModelTest.h */,
@@ -281,6 +292,10 @@
 		56B5D39B1525EC46007982F0 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				56B5D3A91525F2F200798302 /* ICSimplePerson.h */,
+				56B5D3A91525F2F200798300 /* ICSimplePerson.m */,
+				56B5D3A91525F2F2007982FF /* ICSimpleSignal.h */,
+				56B5D3A91525F2F2007982FD /* ICSimpleSignal.m */,
 				56B5D39C1525EC7B007982F0 /* ICSignal.h */,
 				56B5D39D1525EC7B007982F0 /* ICSignal.m */,
 			);
@@ -443,6 +458,8 @@
 				56B5D3991525EBA6007982F0 /* DataModel.xcdatamodeld in Sources */,
 				56B5D39E1525EC7B007982F0 /* ICSignal.m in Sources */,
 				56B5D3A91525F2F2007982F5 /* ICRestKitConfiguration.m in Sources */,
+				56B5D3A91525F2F2007982FE /* ICSimpleSignal.m in Sources */,
+				56B5D3A91525F2F200798301 /* ICSimplePerson.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +469,7 @@
 			files = (
 				56B5D3A01525ECDC007982F2 /* DataModelTest.m in Sources */,
 				56B5D3A91525F2F2007982F2 /* ICRestKitConfigurationTest.m in Sources */,
+				56B5D3A91525F2F2007982F8 /* ICRestKitModelConfigurationTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

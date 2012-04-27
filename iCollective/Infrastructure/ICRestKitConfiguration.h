@@ -8,8 +8,14 @@
 #import <Foundation/Foundation.h>
 
 @class RKClient;
+@class RKObjectManager;
+static NSString *const baseurl = @"https://cegeka.socialtext.net/data/";
+static NSString *const username = @"BLAB"; //TODO
+static NSString *const password = @"BLUB"; //TODO
 
 
 @interface ICRestKitConfiguration : NSObject
 + (RKClient*)configureRestKit;
+
++ (RKObjectManager *)objectManager;
 @end
