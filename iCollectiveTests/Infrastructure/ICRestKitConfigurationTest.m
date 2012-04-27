@@ -44,10 +44,11 @@
 
 - (void)waitUntilDownloaded: (RKRequest *) request {
     int timeout = MAX_TIMEOUT;
-    while ([request isLoading]  && timeout > 0) {
+    do {
         [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:1]];
         timeout--;
-    }
+    } while([request isLoading] && timeout >0);
+
     STAssertTrue(timeout > 0, @"Timeout reached");
 }
 
