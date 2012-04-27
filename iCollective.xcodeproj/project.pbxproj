@@ -37,6 +37,8 @@
 		56B5D3A01525ECDC007982F0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B5D39F1525ECDC007982F0 /* CoreData.framework */; };
 		56B5D3A01525ECDC007982F2 /* DataModelTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3A01525ECDC007982F1 /* DataModelTest.m */; };
 		56B5D3A91525F2F2007982F0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B5D39F1525ECDC007982F0 /* CoreData.framework */; };
+		56B5D3A91525F2F2007982F2 /* ICRestKitConfigurationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F2007982F1 /* ICRestKitConfigurationTest.m */; };
+		56B5D3A91525F2F2007982F5 /* ICRestKitConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F2007982F4 /* ICRestKitConfiguration.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +134,10 @@
 		56B5D39F1525ECDC007982F0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		56B5D3A01525ECDC007982F1 /* DataModelTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelTest.m; sourceTree = "<group>"; };
 		56B5D3A01525ECDC007982F3 /* DataModelTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModelTest.h; sourceTree = "<group>"; };
+		56B5D3A91525F2F2007982F1 /* ICRestKitConfigurationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICRestKitConfigurationTest.m; sourceTree = "<group>"; };
+		56B5D3A91525F2F2007982F3 /* ICRestKitConfigurationTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICRestKitConfigurationTest.h; sourceTree = "<group>"; };
+		56B5D3A91525F2F2007982F4 /* ICRestKitConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICRestKitConfiguration.m; sourceTree = "<group>"; };
+		56B5D3A91525F2F2007982F6 /* ICRestKitConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICRestKitConfiguration.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +260,8 @@
 		3923D757A0A4204A4B0F63D4 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				56B5D3A91525F2F2007982F6 /* ICRestKitConfiguration.h */,
+				56B5D3A91525F2F2007982F4 /* ICRestKitConfiguration.m */,
 				3923D757A0A4204A4B0F63E3 /* NSMutableURLRequest+Authentication.h */,
 				3923D757A0A4204A4B0F63E1 /* NSMutableURLRequest+Authentication.m */,
 				3923D757A0A4204A4B0F63DD /* SocialtextHttpConnection.h */,
@@ -266,6 +274,8 @@
 		3923D757A0A4204A4B0F63D5 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				56B5D3A91525F2F2007982F3 /* ICRestKitConfigurationTest.h */,
+				56B5D3A91525F2F2007982F1 /* ICRestKitConfigurationTest.m */,
 				56B5D3A01525ECDC007982F3 /* DataModelTest.h */,
 				56B5D3A01525ECDC007982F1 /* DataModelTest.m */,
 				3923D757A0A4204A4B0F63E6 /* NSMutableURLRequestAuthenticationTest.h */,
@@ -454,6 +464,7 @@
 				3923D757A0A4204A4B0F63E2 /* NSMutableURLRequest+Authentication.m in Sources */,
 				56B5D3991525EBA6007982F0 /* DataModel.xcdatamodeld in Sources */,
 				56B5D39E1525EC7B007982F0 /* ICSignal.m in Sources */,
+				56B5D3A91525F2F2007982F5 /* ICRestKitConfiguration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +475,7 @@
 				3923D757A0A4204A4B0F63D9 /* SocialtextHTTPConnectionTest.m in Sources */,
 				3923D757A0A4204A4B0F63E5 /* NSMutableURLRequestAuthenticationTest.m in Sources */,
 				56B5D3A01525ECDC007982F2 /* DataModelTest.m in Sources */,
+				56B5D3A91525F2F2007982F2 /* ICRestKitConfigurationTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,6 +589,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Frameworks/RestKit/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -593,6 +606,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Frameworks/RestKit/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -607,11 +621,12 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iCollective/iCollective-Prefix.pch";
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/../../Headers";
 				INFOPLIST_FILE = "iCollectiveTests/iCollectiveTests-Info.plist";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Frameworks/RestKit/**";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
@@ -626,11 +641,12 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iCollective/iCollective-Prefix.pch";
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/../../Headers";
 				INFOPLIST_FILE = "iCollectiveTests/iCollectiveTests-Info.plist";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Frameworks/RestKit/**";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
