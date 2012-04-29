@@ -24,8 +24,6 @@
 	[super viewDidLoad]; 
     RKObjectManager * manager = [ICRestKitConfiguration objectManager];
     [manager loadObjectsAtResourcePath:@"/signals" delegate:self];
-    
-    [self waitUntilDownloaded];
 }
 
 - (void)viewDidUnload
@@ -61,18 +59,14 @@
     return cell; 
 }
 
+- (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error {
+    NSLog(@"Error occurred while loading signals: %@", error);
+}
+
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {
     signalsArray = objects;
+    [[self tableView] reloadData];
 }
 
-
-- (void)waitUntilDownloaded {
-    int timeout = 10;
-    do {
-        [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:1]];
-        timeout--;
-    } while(signalsArray == nil && timeout >0);
-    
-}
 
 @end
