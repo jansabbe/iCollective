@@ -28,6 +28,9 @@
 		56208ADA154A896F00239D15 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56208ACB154A87FB00239D15 /* SystemConfiguration.framework */; };
 		56208ADB154A897700239D15 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56208ACD154A880600239D15 /* QuartzCore.framework */; };
 		56208ADC154A897D00239D15 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 56208ACF154A881200239D15 /* libxml2.dylib */; };
+		567ED087156F83A200B909D2 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		5682A3FE156F7ADB00C1D4F7 /* cegekalogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5682A3FC156F7ADB00C1D4F7 /* cegekalogo.png */; };
+		5682A3FF156F7ADB00C1D4F7 /* cegekalogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5682A3FD156F7ADB00C1D4F7 /* cegekalogo@2x.png */; };
 		56B5D3991525EBA6007982F0 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3971525EBA6007982F0 /* DataModel.xcdatamodeld */; };
 		56B5D39E1525EC7B007982F0 /* ICSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D39D1525EC7B007982F0 /* ICSignal.m */; };
 		56B5D3A01525ECDC007982F0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B5D39F1525ECDC007982F0 /* CoreData.framework */; };
@@ -38,6 +41,10 @@
 		56B5D3A91525F2F2007982F8 /* ICRestKitModelConfigurationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F2007982F7 /* ICRestKitModelConfigurationTest.m */; };
 		56B5D3A91525F2F2007982FE /* ICSimpleSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F2007982FD /* ICSimpleSignal.m */; };
 		56B5D3A91525F2F200798301 /* ICSimplePerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F200798300 /* ICSimplePerson.m */; };
+		56B5D3A91525F2F200798305 /* ICLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F200798304 /* ICLoginViewController.m */; };
+		56B5D3A91525F2F200798308 /* ICUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F200798307 /* ICUser.m */; };
+		56B5D3A91525F2F20079830C /* ICUserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F20079830B /* ICUserTest.m */; };
+		56B5D3A91525F2F20079830F /* ICUserStub.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F20079830E /* ICUserStub.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,8 +110,8 @@
 		3923D757A0A4204A4B0F63AF /* iCollective-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iCollective-Prefix.pch"; sourceTree = "<group>"; };
 		3923D757A0A4204A4B0F63B0 /* ICAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ICAppDelegate.h; sourceTree = "<group>"; };
 		3923D757A0A4204A4B0F63B1 /* ICAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ICAppDelegate.m; sourceTree = "<group>"; };
-		3923D757A0A4204A4B0F63B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		3923D757A0A4204A4B0F63B6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		3923D757A0A4204A4B0F63B3 /* MainStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = MainStoryboard_iPhone.storyboard; path = ../en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		3923D757A0A4204A4B0F63B6 /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = MainStoryboard_iPad.storyboard; path = ../en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		3923D757A0A4204A4B0F63B9 /* ICSignalTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ICSignalTableViewController.h; sourceTree = "<group>"; };
 		3923D757A0A4204A4B0F63BA /* ICSignalTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ICSignalTableViewController.m; sourceTree = "<group>"; };
 		3923D757A0A4204A4B0F63BC /* iCollectiveTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iCollectiveTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +126,8 @@
 		56208ACB154A87FB00239D15 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		56208ACD154A880600239D15 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		56208ACF154A881200239D15 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		5682A3FC156F7ADB00C1D4F7 /* cegekalogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cegekalogo.png; sourceTree = "<group>"; };
+		5682A3FD156F7ADB00C1D4F7 /* cegekalogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cegekalogo@2x.png"; sourceTree = "<group>"; };
 		56B5D3981525EBA6007982F0 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		56B5D39C1525EC7B007982F0 /* ICSignal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICSignal.h; path = Domain/ICSignal.h; sourceTree = "<group>"; };
 		56B5D39D1525EC7B007982F0 /* ICSignal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICSignal.m; path = Domain/ICSignal.m; sourceTree = "<group>"; };
@@ -135,6 +144,14 @@
 		56B5D3A91525F2F2007982FF /* ICSimpleSignal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSimpleSignal.h; sourceTree = "<group>"; };
 		56B5D3A91525F2F200798300 /* ICSimplePerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSimplePerson.m; sourceTree = "<group>"; };
 		56B5D3A91525F2F200798302 /* ICSimplePerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSimplePerson.h; sourceTree = "<group>"; };
+		56B5D3A91525F2F200798304 /* ICLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICLoginViewController.m; sourceTree = "<group>"; };
+		56B5D3A91525F2F200798306 /* ICLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICLoginViewController.h; sourceTree = "<group>"; };
+		56B5D3A91525F2F200798307 /* ICUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICUser.m; sourceTree = "<group>"; };
+		56B5D3A91525F2F200798309 /* ICUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICUser.h; sourceTree = "<group>"; };
+		56B5D3A91525F2F20079830B /* ICUserTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICUserTest.m; sourceTree = "<group>"; };
+		56B5D3A91525F2F20079830D /* ICUserTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICUserTest.h; sourceTree = "<group>"; };
+		56B5D3A91525F2F20079830E /* ICUserStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICUserStub.m; sourceTree = "<group>"; };
+		56B5D3A91525F2F200798310 /* ICUserStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICUserStub.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,15 +229,13 @@
 		3923D757A0A4204A4B0F63A7 /* iCollective */ = {
 			isa = PBXGroup;
 			children = (
+				5682A3FB156F7AC300C1D4F7 /* Resources */,
 				56B5D39B1525EC46007982F0 /* Domain */,
-				3923D757A0A4204A4B0F63BA /* ICSignalTableViewController.m */,
-				3923D757A0A4204A4B0F63B9 /* ICSignalTableViewController.h */,
-				3923D757A0A4204A4B0F63B7 /* MainStoryboard_iPad.storyboard */,
-				3923D757A0A4204A4B0F63B4 /* MainStoryboard_iPhone.storyboard */,
 				3923D757A0A4204A4B0F63B1 /* ICAppDelegate.m */,
 				3923D757A0A4204A4B0F63B0 /* ICAppDelegate.h */,
 				3923D757A0A4204A4B0F63A8 /* Supporting Files */,
 				3923D757A0A4204A4B0F63D4 /* Infrastructure */,
+				56B5D3A91525F2F200798303 /* View */,
 			);
 			path = iCollective;
 			sourceTree = "<group>";
@@ -241,6 +256,7 @@
 			children = (
 				3923D757A0A4204A4B0F63CC /* Supporting Files */,
 				3923D757A0A4204A4B0F63D5 /* Infrastructure */,
+				56B5D3A91525F2F20079830A /* Domain */,
 			);
 			path = iCollectiveTests;
 			sourceTree = "<group>";
@@ -248,6 +264,8 @@
 		3923D757A0A4204A4B0F63CC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				56B5D3A91525F2F200798310 /* ICUserStub.h */,
+				56B5D3A91525F2F20079830E /* ICUserStub.m */,
 				3923D757A0A4204A4B0F63CF /* InfoPlist.strings */,
 				3923D757A0A4204A4B0F63CD /* iCollectiveTests-Info.plist */,
 			);
@@ -289,9 +307,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		5682A3FB156F7AC300C1D4F7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5682A3FC156F7ADB00C1D4F7 /* cegekalogo.png */,
+				5682A3FD156F7ADB00C1D4F7 /* cegekalogo@2x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		56B5D39B1525EC46007982F0 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				56B5D3A91525F2F200798309 /* ICUser.h */,
+				56B5D3A91525F2F200798307 /* ICUser.m */,
 				56B5D3A91525F2F200798302 /* ICSimplePerson.h */,
 				56B5D3A91525F2F200798300 /* ICSimplePerson.m */,
 				56B5D3A91525F2F2007982FF /* ICSimpleSignal.h */,
@@ -300,6 +329,28 @@
 				56B5D39D1525EC7B007982F0 /* ICSignal.m */,
 			);
 			name = Domain;
+			sourceTree = "<group>";
+		};
+		56B5D3A91525F2F200798303 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				56B5D3A91525F2F200798306 /* ICLoginViewController.h */,
+				56B5D3A91525F2F200798304 /* ICLoginViewController.m */,
+				3923D757A0A4204A4B0F63B4 /* MainStoryboard_iPhone.storyboard */,
+				3923D757A0A4204A4B0F63B7 /* MainStoryboard_iPad.storyboard */,
+				3923D757A0A4204A4B0F63BA /* ICSignalTableViewController.m */,
+				3923D757A0A4204A4B0F63B9 /* ICSignalTableViewController.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		56B5D3A91525F2F20079830A /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				56B5D3A91525F2F20079830D /* ICUserTest.h */,
+				56B5D3A91525F2F20079830B /* ICUserTest.m */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -418,6 +469,8 @@
 				3923D757A0A4204A4B0F63B5 /* MainStoryboard_iPhone.storyboard in Resources */,
 				3923D757A0A4204A4B0F63B8 /* MainStoryboard_iPad.storyboard in Resources */,
 				3923D757A0A4204A4B0F63D7 /* README in Resources */,
+				5682A3FE156F7ADB00C1D4F7 /* cegekalogo.png in Resources */,
+				5682A3FF156F7ADB00C1D4F7 /* cegekalogo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +513,9 @@
 				56B5D3A91525F2F2007982F5 /* ICRestKitConfiguration.m in Sources */,
 				56B5D3A91525F2F2007982FE /* ICSimpleSignal.m in Sources */,
 				56B5D3A91525F2F200798301 /* ICSimplePerson.m in Sources */,
+				567ED087156F83A200B909D2 /* (null) in Sources */,
+				56B5D3A91525F2F200798305 /* ICLoginViewController.m in Sources */,
+				56B5D3A91525F2F200798308 /* ICUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +526,8 @@
 				56B5D3A01525ECDC007982F2 /* DataModelTest.m in Sources */,
 				56B5D3A91525F2F2007982F2 /* ICRestKitConfigurationTest.m in Sources */,
 				56B5D3A91525F2F2007982F8 /* ICRestKitModelConfigurationTest.m in Sources */,
+				56B5D3A91525F2F20079830C /* ICUserTest.m in Sources */,
+				56B5D3A91525F2F20079830F /* ICUserStub.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,7 +558,7 @@
 		3923D757A0A4204A4B0F63B4 /* MainStoryboard_iPhone.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3923D757A0A4204A4B0F63B3 /* en */,
+				3923D757A0A4204A4B0F63B3 /* MainStoryboard_iPhone.storyboard */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -508,7 +566,7 @@
 		3923D757A0A4204A4B0F63B7 /* MainStoryboard_iPad.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3923D757A0A4204A4B0F63B6 /* en */,
+				3923D757A0A4204A4B0F63B6 /* MainStoryboard_iPad.storyboard */,
 			);
 			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";

@@ -9,7 +9,7 @@
 
 
 @interface ICSimplePerson : NSObject
-@property(strong) NSString* username;
+@property(strong) NSString *username;
 @property(strong) NSString *fullName;
 
 @end

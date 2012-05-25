@@ -7,6 +7,7 @@
 
 #import "ICRestKitConfigurationTest.h"
 #import "ICRestKitConfiguration.h"
+#import "ICUserStub.h"
 #import <RestKit/RestKit.h>
 #import <RestKit/Testing.h>
 
@@ -17,8 +18,8 @@
     UIImage *profileImage;
 }
 
-- (void) testCanConnectToSocialText {
-    RKClient* client = [ICRestKitConfiguration configureRestKit];
+- (void)testCanConnectToSocialText {
+    RKClient *client = [ICRestKitConfiguration configureRestKitWithUser:[ICUserStub testUser]];
     RKRequest *request = [client get:@"/people/jan.sabbe@cegeka.be/photo/small_photo" delegate:self];
 
     STAssertNotNil(request, @"Request should not be nil");
@@ -42,12 +43,13 @@
 
 }
 
-- (void)waitUntilDownloaded: (RKRequest *) request {
+
+- (void)waitUntilDownloaded:(RKRequest *)request {
     int timeout = MAX_TIMEOUT;
     do {
         [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:1]];
         timeout--;
-    } while([request isLoading] && timeout >0);
+    } while ([request isLoading] && timeout > 0);
 
     STAssertTrue(timeout > 0, @"Timeout reached");
 }

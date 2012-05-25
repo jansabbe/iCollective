@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <RestKit/RestKit.h>
+#import "ICLoginViewController.h"
 
-@interface ICSignalTableViewController : UITableViewController <RKObjectLoaderDelegate>
+@interface ICSignalTableViewController : UITableViewController <RKObjectLoaderDelegate, ICLoginViewControllerDelegate>
 
-@property (nonatomic, retain) NSArray *signalsArray; 
+@property(nonatomic, retain) NSArray *signalsArray;
 
 @end

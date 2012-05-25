@@ -9,8 +9,8 @@
 
 
 @interface ICSimpleSignal : NSObject
-@property(strong) NSString* body;
-@property(strong) NSString* senderName;
-@property(strong) NSString* timestamp;
+@property(strong) NSString *body;
+@property(strong) NSString *senderName;
+@property(strong) NSString *timestamp;
 
 @end

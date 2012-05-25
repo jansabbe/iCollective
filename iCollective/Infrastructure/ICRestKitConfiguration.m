@@ -8,6 +8,7 @@
 #import "ICRestKitConfiguration.h"
 #import "ICSimpleSignal.h"
 #import "ICSimplePerson.h"
+#import "ICUser.h"
 #import <RestKit/RestKit.h>
 
 
@@ -15,18 +16,19 @@
 
 }
 
-+ (RKClient *)configureRestKit {
++ (RKClient *)configureRestKitWithUser:(ICUser *)user; {
     [RKClient clientWithBaseURLString:baseurl];
     [[RKClient sharedClient] setAuthenticationType:RKRequestAuthenticationTypeHTTPBasic];
-    [[RKClient sharedClient] setUsername:username];
-    [[RKClient sharedClient] setPassword:password];
+    [[RKClient sharedClient] setUsername:user.userName];
+    [[RKClient sharedClient] setPassword:user.password];
+    [[[RKClient sharedClient] requestQueue] setShowsNetworkActivityIndicatorWhenBusy:YES];
     return [RKClient sharedClient];
 
 }
 
 + (RKObjectManager *)objectManager {
     RKObjectManager *objectManager = [RKObjectManager managerWithBaseURLString:baseurl];
-    [objectManager setClient:[self configureRestKit]];
+    [objectManager setClient:[RKClient sharedClient]];
 
     [objectManager setSerializationMIMEType:RKMIMETypeJSON];
     [objectManager setAcceptMIMEType:RKMIMETypeJSON];

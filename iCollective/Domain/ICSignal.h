@@ -11,11 +11,11 @@
 
 @interface ICSignal : NSManagedObject
 
-@property (nonatomic, strong) NSString* body;
+@property(nonatomic, strong) NSString *body;
 
-@property (nonatomic, strong) NSString* senderName;
+@property(nonatomic, strong) NSString *senderName;
 
-@property (nonatomic, strong) NSDate* timestamp;
+@property(nonatomic, strong) NSDate *timestamp;
 
 + (ICSignal *)signalWithBody:(NSString *)body sender:(NSString *)senderName timestamp:(NSDate *)timestamp inContext:(NSManagedObjectContext *)managedObjectContext;
 

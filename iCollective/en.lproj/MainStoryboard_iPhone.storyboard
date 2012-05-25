@@ -1,18 +1,86 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="NQ1-Kt-6GD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Nqe-7q-aTk">
     <dependencies>
         <deployment defaultVersion="1296" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
     <scenes>
-        <!--Signal Table View Controller-->
+        <!--Login View Controller-->
+        <scene sceneID="wYY-l2-IMY">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c5K-sa-gJK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="feE-lY-DhM" customClass="ICLoginViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LNZ-6p-vqr">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="cegekalogo.png" id="Wy7-1C-WGI">
+                                <rect key="frame" x="95" y="20" width="130" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" minimumFontSize="17" id="MLq-1X-Tyx">
+                                <rect key="frame" x="20" y="107" width="280" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" id="caz-2e-gpf">
+                                <rect key="frame" x="20" y="146" width="280" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kk1-dF-FAt">
+                                <rect key="frame" x="20" y="185" width="280" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="disabled" title="Logging in...">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="login" destination="feE-lY-DhM" eventType="touchUpInside" id="u3r-DU-QZB"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" id="Ccd-ny-iad">
+                                <rect key="frame" x="270" y="194" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Incorrect username or password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="4YD-4M-OsP">
+                                <rect key="frame" x="20" y="78" width="247" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.92011294157608692" green="0.08955111269898583" blue="0.06785365018289484" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="errorMessageLabel" destination="4YD-4M-OsP" id="u1M-61-F3I"/>
+                        <outlet property="loginActivityIndicator" destination="Ccd-ny-iad" id="PRs-Yg-AqI"/>
+                        <outlet property="loginButton" destination="kk1-dF-FAt" id="AqD-th-Xy2"/>
+                        <outlet property="loginTextField" destination="MLq-1X-Tyx" id="bO7-Rp-0Ra"/>
+                        <outlet property="passwordTextField" destination="caz-2e-gpf" id="dau-Dx-FC2"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1274" y="-230"/>
+        </scene>
+        <!--Signal Table View Controller - Signals-->
         <scene sceneID="QeP-CL-W6q">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9OP-5G-biA" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="NQ1-Kt-6GD" customClass="ICSignalTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="iWZ-HJ-ShT">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -40,12 +108,48 @@
                             <outlet property="delegate" destination="NQ1-Kt-6GD" id="vb2-Fy-9IJ"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Signals" id="AgT-EU-YwI"/>
+                    <connections>
+                        <segue destination="feE-lY-DhM" kind="modal" identifier="showLogin" id="wo2-gc-VxH"/>
+                    </connections>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="413" y="177"/>
+            <point key="canvasLocation" x="801" y="377"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uIn-8x-hy3">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HLn-s8-Lue" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="Nqe-7q-aTk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="6dj-0W-a6U">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NQ1-Kt-6GD" kind="relationship" relationship="rootViewController" id="FMk-k9-8aE"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="385" y="377"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cegekalogo.png" width="300" height="153"/>
+    </resources>
     <classes>
+        <class className="ICLoginViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ICLoginViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="login"/>
+                <relationship kind="outlet" name="errorMessageLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="loginActivityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="loginTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="passwordTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
         <class className="ICSignalTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ICSignalTableViewController.h"/>
         </class>

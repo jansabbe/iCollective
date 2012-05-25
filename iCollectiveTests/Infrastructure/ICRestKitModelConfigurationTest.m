@@ -9,17 +9,24 @@
 #import "ICRestKitConfiguration.h"
 #import "ICSimpleSignal.h"
 #import "ICSimplePerson.h"
+#import "ICUserStub.h"
 #import <RestKit/RestKit.h>
 
-#define MAX_TIMEOUT 10
+#define MAX_TIMEOUT 30
 
 
 @implementation ICRestKitModelConfigurationTest {
-    NSArray* loadedObjects;
+    NSArray *loadedObjects;
 }
 
-- (void) testCanLoadSignalFromSocialText {
-    RKObjectManager * manager = [ICRestKitConfiguration objectManager];
+- (void)setUp {
+    [super setUp];
+    [ICRestKitConfiguration configureRestKitWithUser:[ICUserStub testUser]];
+}
+
+
+- (void)testCanLoadSignalFromSocialText {
+    RKObjectManager *manager = [ICRestKitConfiguration objectManager];
     [manager loadObjectsAtResourcePath:@"/signals" delegate:self];
     [self waitUntilDownloaded];
 
@@ -28,8 +35,8 @@
 
 }
 
-- (void) testCanLoadPeopleFromSocialText {
-    RKObjectManager * manager = [ICRestKitConfiguration objectManager];
+- (void)testCanLoadPeopleFromSocialText {
+    RKObjectManager *manager = [ICRestKitConfiguration objectManager];
     [manager loadObjectsAtResourcePath:@"/people" delegate:self];
     [self waitUntilDownloaded];
 
@@ -51,7 +58,7 @@
     do {
         [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:1]];
         timeout--;
-    } while(loadedObjects == nil && timeout >0);
+    } while (loadedObjects == nil && timeout > 0);
 
     STAssertTrue(timeout > 0, @"Timeout reached");
 }

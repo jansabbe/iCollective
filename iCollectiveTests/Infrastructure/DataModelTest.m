@@ -20,11 +20,8 @@
 - (void)setUp {
     self.model = [NSManagedObjectModel mergedModelFromBundles:[NSBundle allBundles]];
     self.coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.model];
-    self.store = [self.coordinator addPersistentStoreWithType: NSInMemoryStoreType
-                                                configuration: nil
-                                                          URL: nil
-                                                      options: nil
-                                                        error: NULL];
+    self.store = [self.coordinator addPersistentStoreWithType:NSInMemoryStoreType
+                                                configuration:nil URL:nil options:nil error:NULL];
 
     self.context = [[NSManagedObjectContext alloc] init];
     self.context.persistentStoreCoordinator = self.coordinator;
@@ -33,7 +30,7 @@
 }
 
 
-- (void) testCanPersistSignal {
+- (void)testCanPersistSignal {
     [ICSignal signalWithBody:@"Testing" sender:@"Jonnie" timestamp:[NSDate date] inContext:self.context];
 
     NSError *error;
@@ -43,11 +40,11 @@
 }
 
 
-- (void) testCanLoadSignal {
+- (void)testCanLoadSignal {
     NSString *expectedBody = @"Testing";
     NSString *expectedSender = @"Jonnie";
     NSDate *expectedTimestamp = [NSDate date];
-    
+
     [ICSignal signalWithBody:expectedBody sender:expectedSender timestamp:expectedTimestamp inContext:self.context];
     [self.context save:NULL];
 
@@ -56,13 +53,12 @@
     NSArray *results = [self.context executeFetchRequest:request error:&error];
     STAssertNil(error, @"Error while fetching: %@", error);
 
-    ICSignal * actualSignal = results.lastObject;
+    ICSignal *actualSignal = results.lastObject;
     STAssertNotNil(actualSignal, @"Fetch request should have returned atleast one result");
     STAssertEqualObjects(expectedBody, actualSignal.body, nil);
     STAssertEqualObjects(expectedSender, actualSignal.senderName, nil);
     STAssertEqualObjects(expectedTimestamp, actualSignal.timestamp, nil);
 }
-
 
 
 @end

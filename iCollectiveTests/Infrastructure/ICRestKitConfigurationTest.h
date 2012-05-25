@@ -9,8 +9,8 @@
 #import <SenTestingKit/SenTestingKit.h>
 #import <RestKit/RestKit.h>
 
-
 @interface ICRestKitConfigurationTest : SenTestCase <RKRequestDelegate>
 - (void)request:(RKRequest *)request didFailLoadWithError:(NSError *)error;
+
 - (void)request:(RKRequest *)request didLoadResponse:(RKResponse *)response;
 @end

@@ -9,13 +9,12 @@
 
 @class RKClient;
 @class RKObjectManager;
+@class ICUser;
 static NSString *const baseurl = @"https://cegeka.socialtext.net/data/";
-static NSString *const username = @"BLUB"; //TODO
-static NSString *const password = @"BLAB"; //TODO
 
 
 @interface ICRestKitConfiguration : NSObject
-+ (RKClient*)configureRestKit;
++ (RKClient *)configureRestKitWithUser:(ICUser *)user;
 
 + (RKObjectManager *)objectManager;
 @end
