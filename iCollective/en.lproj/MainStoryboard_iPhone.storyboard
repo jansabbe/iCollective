@@ -72,35 +72,38 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1274" y="-230"/>
+            <point key="canvasLocation" x="772" y="-258"/>
         </scene>
         <!--Signal Table View Controller - Signals-->
         <scene sceneID="QeP-CL-W6q">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9OP-5G-biA" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="NQ1-Kt-6GD" customClass="ICSignalTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="iWZ-HJ-ShT">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="93" sectionHeaderHeight="22" sectionFooterHeight="22" id="iWZ-HJ-ShT">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="signal" textLabel="Mg2-LQ-5r2" style="IBUITableViewCellStyleDefault" id="uM3-Dp-NXL">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="signal" textLabel="Mg2-LQ-5r2" rowHeight="93" style="IBUITableViewCellStyleDefault" id="uM3-Dp-NXL">
+                                <rect key="frame" x="0.0" y="22" width="320" height="93"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="92"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mg2-LQ-5r2">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="TopLeft" text="Title" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mg2-LQ-5r2">
+                                            <rect key="frame" x="10" y="0.0" width="280" height="92"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="GC3-ax-Gng" kind="push" identifier="showSignal" id="0x7-Qr-Lrs"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -115,6 +118,44 @@
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="801" y="377"/>
+        </scene>
+        <!--Signal Detail View Controller - Signal-->
+        <scene sceneID="cVn-FV-vx6">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wfK-wE-ZYe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="GC3-ax-Gng" customClass="ICSignalDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p1s-gY-k81">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" id="kxl-pz-gw4">
+                                <rect key="frame" x="20" y="90" width="280" height="326"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Verstuurder" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="cy5-oE-aJU">
+                                <rect key="frame" x="90" y="61" width="210" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="xqb-r0-6XN">
+                                <rect key="frame" x="20" y="20" width="62" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Signal" id="xh4-Cf-see"/>
+                    <connections>
+                        <outlet property="profilePhotoView" destination="xqb-r0-6XN" id="n0I-qr-GnS"/>
+                        <outlet property="senderLabel" destination="cy5-oE-aJU" id="yXf-4s-CPX"/>
+                        <outlet property="signalTextView" destination="kxl-pz-gw4" id="cLU-ge-JVX"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1264" y="387"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uIn-8x-hy3">
@@ -148,6 +189,14 @@
                 <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="loginTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="passwordTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="ICSignalDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ICSignalDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="profilePhotoView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="senderLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="signalTextView" candidateClass="UIWebView"/>
             </relationships>
         </class>
         <class className="ICSignalTableViewController" superclassName="UITableViewController">

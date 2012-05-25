@@ -37,6 +37,7 @@
     [signalMapping mapKeyPath:@"body" toAttribute:@"body"];
     [signalMapping mapKeyPath:@"best_full_name" toAttribute:@"senderName"];
     [signalMapping mapKeyPath:@"at" toAttribute:@"timestamp"];
+    [signalMapping mapKeyPath:@"user_id" toAttribute:@"userId"];
 
     [[objectManager mappingProvider] setObjectMapping:signalMapping forResourcePathPattern:@"/signals"];
 

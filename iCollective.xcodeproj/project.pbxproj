@@ -28,6 +28,7 @@
 		56208ADA154A896F00239D15 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56208ACB154A87FB00239D15 /* SystemConfiguration.framework */; };
 		56208ADB154A897700239D15 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56208ACD154A880600239D15 /* QuartzCore.framework */; };
 		56208ADC154A897D00239D15 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 56208ACF154A881200239D15 /* libxml2.dylib */; };
+		564A88B0156FC87400029B8C /* ICSignalDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564A88AF156FC87400029B8C /* ICSignalDetailViewController.m */; };
 		567ED087156F83A200B909D2 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		5682A3FE156F7ADB00C1D4F7 /* cegekalogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5682A3FC156F7ADB00C1D4F7 /* cegekalogo.png */; };
 		5682A3FF156F7ADB00C1D4F7 /* cegekalogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5682A3FD156F7ADB00C1D4F7 /* cegekalogo@2x.png */; };
@@ -45,6 +46,7 @@
 		56B5D3A91525F2F200798308 /* ICUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F200798307 /* ICUser.m */; };
 		56B5D3A91525F2F20079830C /* ICUserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F20079830B /* ICUserTest.m */; };
 		56B5D3A91525F2F20079830F /* ICUserStub.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F20079830E /* ICUserStub.m */; };
+		56B5D3A91525F2F200798312 /* ICSimpleSignalTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F200798311 /* ICSimpleSignalTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +128,8 @@
 		56208ACB154A87FB00239D15 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		56208ACD154A880600239D15 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		56208ACF154A881200239D15 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		564A88AE156FC87400029B8C /* ICSignalDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSignalDetailViewController.h; sourceTree = "<group>"; };
+		564A88AF156FC87400029B8C /* ICSignalDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSignalDetailViewController.m; sourceTree = "<group>"; };
 		5682A3FC156F7ADB00C1D4F7 /* cegekalogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cegekalogo.png; sourceTree = "<group>"; };
 		5682A3FD156F7ADB00C1D4F7 /* cegekalogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cegekalogo@2x.png"; sourceTree = "<group>"; };
 		56B5D3981525EBA6007982F0 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -152,6 +156,8 @@
 		56B5D3A91525F2F20079830D /* ICUserTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICUserTest.h; sourceTree = "<group>"; };
 		56B5D3A91525F2F20079830E /* ICUserStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICUserStub.m; sourceTree = "<group>"; };
 		56B5D3A91525F2F200798310 /* ICUserStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICUserStub.h; sourceTree = "<group>"; };
+		56B5D3A91525F2F200798311 /* ICSimpleSignalTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSimpleSignalTest.m; sourceTree = "<group>"; };
+		56B5D3A91525F2F200798313 /* ICSimpleSignalTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSimpleSignalTest.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,6 +346,8 @@
 				3923D757A0A4204A4B0F63B7 /* MainStoryboard_iPad.storyboard */,
 				3923D757A0A4204A4B0F63BA /* ICSignalTableViewController.m */,
 				3923D757A0A4204A4B0F63B9 /* ICSignalTableViewController.h */,
+				564A88AE156FC87400029B8C /* ICSignalDetailViewController.h */,
+				564A88AF156FC87400029B8C /* ICSignalDetailViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -347,6 +355,8 @@
 		56B5D3A91525F2F20079830A /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				56B5D3A91525F2F200798313 /* ICSimpleSignalTest.h */,
+				56B5D3A91525F2F200798311 /* ICSimpleSignalTest.m */,
 				56B5D3A91525F2F20079830D /* ICUserTest.h */,
 				56B5D3A91525F2F20079830B /* ICUserTest.m */,
 			);
@@ -516,6 +526,7 @@
 				567ED087156F83A200B909D2 /* (null) in Sources */,
 				56B5D3A91525F2F200798305 /* ICLoginViewController.m in Sources */,
 				56B5D3A91525F2F200798308 /* ICUser.m in Sources */,
+				564A88B0156FC87400029B8C /* ICSignalDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,6 +539,7 @@
 				56B5D3A91525F2F2007982F8 /* ICRestKitModelConfigurationTest.m in Sources */,
 				56B5D3A91525F2F20079830C /* ICUserTest.m in Sources */,
 				56B5D3A91525F2F20079830F /* ICUserStub.m in Sources */,
+				56B5D3A91525F2F200798312 /* ICSimpleSignalTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 #import "ICUser.h"
-#import "RestKit.h"
+#import <RestKit/RestKit.h>
 #import "ICRestKitConfiguration.h"
 
 

@@ -9,8 +9,12 @@
 
 
 @interface ICSimpleSignal : NSObject
-@property(strong) NSString *body;
-@property(strong) NSString *senderName;
-@property(strong) NSString *timestamp;
+@property(nonatomic, copy) NSString *body;
+@property(nonatomic, copy) NSString *senderName;
+@property(nonatomic, copy) NSString *timestamp;
+@property(nonatomic, copy) NSString *userId;
 
+- (NSString *)senderPhotoUrl;
+
+- (NSString *)bodyAsPlainText;
 @end

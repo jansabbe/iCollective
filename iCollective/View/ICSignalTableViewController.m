@@ -11,6 +11,7 @@
 #import "ICSimpleSignal.h"
 #import "ICUser.h"
 #import "ICLoginViewController.h"
+#import "ICSignalDetailViewController.h"
 #import <RestKit/RestKit.h>
 
 @interface ICSignalTableViewController ()
@@ -23,7 +24,7 @@
 
 - (void)loadDataFromSocialText {
     RKObjectManager *manager = [ICRestKitConfiguration objectManager];
-    [manager loadObjectsAtResourcePath:@"/signals" delegate:self];
+    [manager loadObjectsAtResourcePath:@"/signals?limit=50" delegate:self];
 }
 
 - (void)viewDidLoad {
@@ -48,16 +49,10 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"signal";
-
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"signal"];
 
     ICSimpleSignal *signal = [self.signalsArray objectAtIndex:indexPath.row];
-
-    cell.textLabel.text = signal.body;
+    cell.textLabel.text = signal.bodyAsPlainText;
     return cell;
 }
 
@@ -71,8 +66,15 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    ICLoginViewController *controller = segue.destinationViewController;
-    controller.delegate = self;
+    if ([segue.identifier isEqualToString:@"showLogin"]) {
+        ICLoginViewController *controller = segue.destinationViewController;
+        controller.delegate = self;
+    } else if ([segue.identifier isEqualToString:@"showSignal"]) {
+        ICSignalDetailViewController *controller = segue.destinationViewController;
+        NSIndexPath *indexPath = [[self tableView] indexPathForCell:sender];
+        ICSimpleSignal *signal = [self.signalsArray objectAtIndex:indexPath.row];
+        controller.signal = signal;
+    }
 }
 
 - (void)loginViewControllerDidCorrectlyLogin:(ICLoginViewController *)controller {
