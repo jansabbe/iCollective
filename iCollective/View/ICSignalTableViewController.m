@@ -10,8 +10,8 @@
 #import "ICSignalTableViewController.h"
 #import "ICSimpleSignal.h"
 #import "ICUser.h"
-#import "ICLoginViewController.h"
 #import "ICSignalDetailViewController.h"
+#import "ICSignalCell.h"
 #import <RestKit/RestKit.h>
 
 @interface ICSignalTableViewController ()
@@ -22,7 +22,7 @@
 
 @synthesize signalsArray;
 
-- (void)loadDataFromSocialText {
+- (IBAction)loadDataFromSocialText {
     RKObjectManager *manager = [ICRestKitConfiguration objectManager];
     [manager loadObjectsAtResourcePath:@"/signals?limit=50" delegate:self];
 }
@@ -49,10 +49,9 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"signal"];
-
+    ICSignalCell *cell = [tableView dequeueReusableCellWithIdentifier:@"signal"];
     ICSimpleSignal *signal = [self.signalsArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = signal.bodyAsPlainText;
+    cell.signal = signal;
     return cell;
 }
 
@@ -71,9 +70,8 @@
         controller.delegate = self;
     } else if ([segue.identifier isEqualToString:@"showSignal"]) {
         ICSignalDetailViewController *controller = segue.destinationViewController;
-        NSIndexPath *indexPath = [[self tableView] indexPathForCell:sender];
-        ICSimpleSignal *signal = [self.signalsArray objectAtIndex:indexPath.row];
-        controller.signal = signal;
+        ICSignalCell *signalCell = sender;
+        controller.signal = signalCell.signal;
     }
 }
 

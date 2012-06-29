@@ -8,14 +8,16 @@
 #import "ICSimplePerson.h"
 
 
-@implementation ICSimplePerson {
-
-@private
-    NSString *_username;
-    NSString *_fullName;
-}
+@implementation ICSimplePerson
 @synthesize username = _username;
 @synthesize fullName = _fullName;
+@synthesize mobilePhone = _mobilePhone;
+@synthesize workPhone = _workPhone;
+@synthesize id = _id;
+@synthesize email = _email;
+@synthesize personalHomepage = _personalHomepage;
+@synthesize homePhone = _homePhone;
+@synthesize twitter = _twitter;
 
 
 @end

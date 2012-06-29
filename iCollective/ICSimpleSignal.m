@@ -12,22 +12,31 @@
 @synthesize body = _body;
 @synthesize senderName = _senderName;
 @synthesize timestamp = _timestamp;
-@synthesize userId = _userId;
+@synthesize personIdsLikingThis = _personIdsLikingThis;
+@synthesize senderId = _senderId;
+@synthesize inReplyToSignalId = _inReplyToSignalId;
+@synthesize signalId = _signalId;
+@synthesize groupIdsPostedTo = _groupIdsPostedTo;
 
 
 - (NSString *)senderPhotoUrl {
-    return [NSString stringWithFormat:@"/people/%@/photo/small_photo", self.userId];
+    return [NSString stringWithFormat:@"/people/%@/photo/small_photo", self.senderId];
 }
 
 - (NSString *)bodyAsPlainText {
-    NSRegularExpression *expression = [NSRegularExpression regularExpressionWithPattern:@"<.+?>"
-                                                                                options:0
-                                                                                  error:NULL];
+    NSString *bodyInPlainText = self.body;
+    NSRegularExpression *tags = [NSRegularExpression regularExpressionWithPattern:@"<.+?>"
+                                                                          options:0
+                                                                            error:NULL];
+    bodyInPlainText = [tags stringByReplacingMatchesInString:bodyInPlainText
+                                                     options:0
+                                                       range:NSMakeRange(0, self.body.length)
+                                                withTemplate:@""];
+    bodyInPlainText = [bodyInPlainText stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
+    bodyInPlainText = [bodyInPlainText stringByReplacingOccurrencesOfString:@"&gt;" withString:@">"];
+    bodyInPlainText = [bodyInPlainText stringByReplacingOccurrencesOfString:@"&lt;" withString:@"<"];
 
-    return [expression stringByReplacingMatchesInString:self.body
-                                                options:0
-                                                  range:NSMakeRange(0, self.body.length)
-                                           withTemplate:@""];
+    return bodyInPlainText;
 }
 
 

@@ -11,5 +11,13 @@
 @interface ICSimplePerson : NSObject
 @property(strong) NSString *username;
 @property(strong) NSString *fullName;
+@property(strong) NSString *homePhone;
+@property(strong) NSString *mobilePhone;
+@property(strong) NSString *workPhone;
+@property(strong) NSString *email;
+@property(strong) NSNumber *id;
+@property(strong) NSString *personalHomepage;
+@property(strong) NSString *twitter;
+
 
 @end

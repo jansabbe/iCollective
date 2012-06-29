@@ -1,0 +1,19 @@
+{
+    "mentioned_users":[],
+    "attachments":[],
+    "group_ids":[
+        "14"
+    ],
+    "num_replies":"2",
+    "account_ids":[],
+    "tags":[],
+    "annotations":[],
+    "uri":"/st/signals/81980e9bf2d288280f4495cfa8da31bc",
+    "body":"Videos of the sessions of WWDC2012 are <a href=\"https://developer.apple.com/videos/wwdc/2012/\">available</a> using your Cegeka Apple login. You can also download and try out iOS 6 beta (if you are feeling brave).",
+    "hash":"81980e9bf2d288280f4495cfa8da31bc",
+    "best_full_name":"Jan Sabbe",
+    "likers":[],
+    "at":"2012-06-28 08:30:55.616227Z",
+    "user_id":"122",
+    "signal_id":"5039"
+}

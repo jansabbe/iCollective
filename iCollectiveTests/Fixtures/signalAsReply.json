@@ -1,0 +1,24 @@
+{
+    "group_ids":[
+        "60"
+    ],
+    "num_replies":"0",
+    "account_ids":[],
+    "body":"Johan, for your second point, it seems to me this is an internal Argenta problem ...",
+    "best_full_name":"Inge Gorgon",
+    "at":"2012-06-28 14:50:37.159088Z",
+    "attachments":[],
+    "mentioned_users":[],
+    "in_reply_to":{
+        "user_id":"73",
+        "signal_id":"5034",
+        "uri":"/st/signals/9d5872b57572a17430af089c5425afbf"
+    },
+    "uri":"/st/signals/9d5872b57572a17430af089c5425afbf?r=e5e40e23459f545b10edaa4f637ddc88",
+    "annotations":[],
+    "tags":[],
+    "hash":"e5e40e23459f545b10edaa4f637ddc88",
+    "likers":[],
+    "user_id":"84",
+    "signal_id":"5043"
+}

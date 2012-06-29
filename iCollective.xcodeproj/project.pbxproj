@@ -30,6 +30,7 @@
 		56208ADC154A897D00239D15 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 56208ACF154A881200239D15 /* libxml2.dylib */; };
 		564A88B0156FC87400029B8C /* ICSignalDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564A88AF156FC87400029B8C /* ICSignalDetailViewController.m */; };
 		567ED087156F83A200B909D2 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		568148B01581286D001DBE1C /* ICSignalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 568148AF1581286D001DBE1C /* ICSignalCell.m */; };
 		5682A3FE156F7ADB00C1D4F7 /* cegekalogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5682A3FC156F7ADB00C1D4F7 /* cegekalogo.png */; };
 		5682A3FF156F7ADB00C1D4F7 /* cegekalogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5682A3FD156F7ADB00C1D4F7 /* cegekalogo@2x.png */; };
 		56B5D3991525EBA6007982F0 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3971525EBA6007982F0 /* DataModel.xcdatamodeld */; };
@@ -47,6 +48,14 @@
 		56B5D3A91525F2F20079830C /* ICUserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F20079830B /* ICUserTest.m */; };
 		56B5D3A91525F2F20079830F /* ICUserStub.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F20079830E /* ICUserStub.m */; };
 		56B5D3A91525F2F200798312 /* ICSimpleSignalTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F200798311 /* ICSimpleSignalTest.m */; };
+		56B5D3A91525F2F20079831F /* ICRestKitMappingConfigurationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F20079831E /* ICRestKitMappingConfigurationTest.m */; };
+		56B5D3A91525F2F200798322 /* basicPerson.json in Resources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F200798321 /* basicPerson.json */; };
+		56B5D3A91525F2F200798324 /* personWithPhonenumber.json in Resources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F200798323 /* personWithPhonenumber.json */; };
+		56B5D3A91525F2F200798326 /* personWithHomepage.json in Resources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F200798325 /* personWithHomepage.json */; };
+		56B5D3A91525F2F200798328 /* personWithTwitter.json in Resources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F200798327 /* personWithTwitter.json */; };
+		56B5D3A91525F2F20079832A /* basicSignal.json in Resources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F200798329 /* basicSignal.json */; };
+		56B5D3A91525F2F20079832C /* signalToGroup.json in Resources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F20079832B /* signalToGroup.json */; };
+		56B5D3A91525F2F20079832E /* signalAsReply.json in Resources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F20079832D /* signalAsReply.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +139,8 @@
 		56208ACF154A881200239D15 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		564A88AE156FC87400029B8C /* ICSignalDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSignalDetailViewController.h; sourceTree = "<group>"; };
 		564A88AF156FC87400029B8C /* ICSignalDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSignalDetailViewController.m; sourceTree = "<group>"; };
+		568148AE1581286D001DBE1C /* ICSignalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSignalCell.h; sourceTree = "<group>"; };
+		568148AF1581286D001DBE1C /* ICSignalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSignalCell.m; sourceTree = "<group>"; };
 		5682A3FC156F7ADB00C1D4F7 /* cegekalogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cegekalogo.png; sourceTree = "<group>"; };
 		5682A3FD156F7ADB00C1D4F7 /* cegekalogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cegekalogo@2x.png"; sourceTree = "<group>"; };
 		56B5D3981525EBA6007982F0 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -158,6 +169,15 @@
 		56B5D3A91525F2F200798310 /* ICUserStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICUserStub.h; sourceTree = "<group>"; };
 		56B5D3A91525F2F200798311 /* ICSimpleSignalTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSimpleSignalTest.m; sourceTree = "<group>"; };
 		56B5D3A91525F2F200798313 /* ICSimpleSignalTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSimpleSignalTest.h; sourceTree = "<group>"; };
+		56B5D3A91525F2F20079831E /* ICRestKitMappingConfigurationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICRestKitMappingConfigurationTest.m; sourceTree = "<group>"; };
+		56B5D3A91525F2F200798320 /* ICRestKitMappingConfigurationTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICRestKitMappingConfigurationTest.h; sourceTree = "<group>"; };
+		56B5D3A91525F2F200798321 /* basicPerson.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = basicPerson.json; sourceTree = "<group>"; };
+		56B5D3A91525F2F200798323 /* personWithPhonenumber.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = personWithPhonenumber.json; sourceTree = "<group>"; };
+		56B5D3A91525F2F200798325 /* personWithHomepage.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = personWithHomepage.json; sourceTree = "<group>"; };
+		56B5D3A91525F2F200798327 /* personWithTwitter.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = personWithTwitter.json; sourceTree = "<group>"; };
+		56B5D3A91525F2F200798329 /* basicSignal.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = basicSignal.json; sourceTree = "<group>"; };
+		56B5D3A91525F2F20079832B /* signalToGroup.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = signalToGroup.json; sourceTree = "<group>"; };
+		56B5D3A91525F2F20079832D /* signalAsReply.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = signalAsReply.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +283,7 @@
 				3923D757A0A4204A4B0F63CC /* Supporting Files */,
 				3923D757A0A4204A4B0F63D5 /* Infrastructure */,
 				56B5D3A91525F2F20079830A /* Domain */,
+				56B5D3A91525F2F200798314 /* Fixtures */,
 			);
 			path = iCollectiveTests;
 			sourceTree = "<group>";
@@ -291,6 +312,8 @@
 		3923D757A0A4204A4B0F63D5 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				56B5D3A91525F2F200798320 /* ICRestKitMappingConfigurationTest.h */,
+				56B5D3A91525F2F20079831E /* ICRestKitMappingConfigurationTest.m */,
 				56B5D3A91525F2F2007982F9 /* ICRestKitModelConfigurationTest.h */,
 				56B5D3A91525F2F2007982F7 /* ICRestKitModelConfigurationTest.m */,
 				56B5D3A91525F2F2007982F3 /* ICRestKitConfigurationTest.h */,
@@ -348,6 +371,8 @@
 				3923D757A0A4204A4B0F63B9 /* ICSignalTableViewController.h */,
 				564A88AE156FC87400029B8C /* ICSignalDetailViewController.h */,
 				564A88AF156FC87400029B8C /* ICSignalDetailViewController.m */,
+				568148AE1581286D001DBE1C /* ICSignalCell.h */,
+				568148AF1581286D001DBE1C /* ICSignalCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -361,6 +386,20 @@
 				56B5D3A91525F2F20079830B /* ICUserTest.m */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		56B5D3A91525F2F200798314 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				56B5D3A91525F2F20079832B /* signalToGroup.json */,
+				56B5D3A91525F2F20079832D /* signalAsReply.json */,
+				56B5D3A91525F2F200798329 /* basicSignal.json */,
+				56B5D3A91525F2F200798327 /* personWithTwitter.json */,
+				56B5D3A91525F2F200798325 /* personWithHomepage.json */,
+				56B5D3A91525F2F200798323 /* personWithPhonenumber.json */,
+				56B5D3A91525F2F200798321 /* basicPerson.json */,
+			);
+			path = Fixtures;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -489,6 +528,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3923D757A0A4204A4B0F63D0 /* InfoPlist.strings in Resources */,
+				56B5D3A91525F2F200798322 /* basicPerson.json in Resources */,
+				56B5D3A91525F2F200798324 /* personWithPhonenumber.json in Resources */,
+				56B5D3A91525F2F200798326 /* personWithHomepage.json in Resources */,
+				56B5D3A91525F2F200798328 /* personWithTwitter.json in Resources */,
+				56B5D3A91525F2F20079832A /* basicSignal.json in Resources */,
+				56B5D3A91525F2F20079832C /* signalToGroup.json in Resources */,
+				56B5D3A91525F2F20079832E /* signalAsReply.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,6 +573,7 @@
 				56B5D3A91525F2F200798305 /* ICLoginViewController.m in Sources */,
 				56B5D3A91525F2F200798308 /* ICUser.m in Sources */,
 				564A88B0156FC87400029B8C /* ICSignalDetailViewController.m in Sources */,
+				568148B01581286D001DBE1C /* ICSignalCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,6 +587,7 @@
 				56B5D3A91525F2F20079830C /* ICUserTest.m in Sources */,
 				56B5D3A91525F2F20079830F /* ICUserStub.m in Sources */,
 				56B5D3A91525F2F200798312 /* ICSimpleSignalTest.m in Sources */,
+				56B5D3A91525F2F20079831F /* ICRestKitMappingConfigurationTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

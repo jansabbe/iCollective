@@ -6,6 +6,7 @@
 
 
 #import <Foundation/Foundation.h>
+#import <RestKit/RestKit.h>
 
 @class RKClient;
 @class RKObjectManager;
@@ -17,4 +18,9 @@ static NSString *const baseurl = @"https://cegeka.socialtext.net/data/";
 + (RKClient *)configureRestKitWithUser:(ICUser *)user;
 
 + (RKObjectManager *)objectManager;
+
++ (RKObjectMapping *)signalMapping;
+
++ (RKObjectMapping *)personMapping;
+
 @end

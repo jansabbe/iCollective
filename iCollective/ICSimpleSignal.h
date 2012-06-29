@@ -9,10 +9,14 @@
 
 
 @interface ICSimpleSignal : NSObject
+@property(nonatomic, copy) NSNumber *signalId;
 @property(nonatomic, copy) NSString *body;
 @property(nonatomic, copy) NSString *senderName;
-@property(nonatomic, copy) NSString *timestamp;
-@property(nonatomic, copy) NSString *userId;
+@property(nonatomic, copy) NSDate *timestamp;
+@property(nonatomic, copy) NSNumber *senderId;
+@property(nonatomic, copy) NSNumber *inReplyToSignalId;
+@property(nonatomic, copy) NSArray *personIdsLikingThis;
+@property(nonatomic, copy) NSArray *groupIdsPostedTo;
 
 - (NSString *)senderPhotoUrl;
 
