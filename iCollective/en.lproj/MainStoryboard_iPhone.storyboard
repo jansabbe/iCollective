@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182"
-          systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none"
-          initialViewController="Nqe-7q-aTk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Nqe-7q-aTk">
     <dependencies>
+        <deployment defaultVersion="1296" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
@@ -10,79 +9,59 @@
         <!--Login View Controller-->
         <scene sceneID="wYY-l2-IMY">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="c5K-sa-gJK" userLabel="First Responder"
-                             sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c5K-sa-gJK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="feE-lY-DhM" customClass="ICLoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LNZ-6p-vqr">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="cegekalogo.png"
-                                       id="Wy7-1C-WGI">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="cegekalogo.png" id="Wy7-1C-WGI">
                                 <rect key="frame" x="95" y="20" width="130" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill"
-                                       contentHorizontalAlignment="left" contentVerticalAlignment="center"
-                                       borderStyle="roundedRect" placeholder="Login" minimumFontSize="17"
-                                       id="MLq-1X-Tyx">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" minimumFontSize="17" id="MLq-1X-Tyx">
                                 <rect key="frame" x="20" y="107" width="280" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"
-                                                 returnKeyType="next"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill"
-                                       contentHorizontalAlignment="left" contentVerticalAlignment="center"
-                                       borderStyle="roundedRect" placeholder="Password" minimumFontSize="17"
-                                       id="caz-2e-gpf">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" id="caz-2e-gpf">
                                 <rect key="frame" x="20" y="146" width="280" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center"
-                                    contentVerticalAlignment="center" buttonType="roundedRect"
-                                    lineBreakMode="middleTruncation" id="kk1-dF-FAt">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kk1-dF-FAt">
                                 <rect key="frame" x="20" y="185" width="280" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Login">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002"
-                                           blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="disabled" title="Logging in...">
-                                    <color key="titleColor" white="0.66666666666666663" alpha="1"
-                                           colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="login" destination="feE-lY-DhM" eventType="touchUpInside"
-                                            id="u3r-DU-QZB"/>
+                                    <action selector="login" destination="feE-lY-DhM" eventType="touchUpInside" id="u3r-DU-QZB"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill"
-                                                   hidesWhenStopped="YES" style="gray" id="Ccd-ny-iad">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" id="Ccd-ny-iad">
                                 <rect key="frame" x="270" y="194" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
-                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO"
-                                   contentMode="left" text="Incorrect username or password"
-                                   lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines"
-                                   minimumFontSize="10" id="4YD-4M-OsP">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Incorrect username or password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="4YD-4M-OsP">
                                 <rect key="frame" x="20" y="78" width="247" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="0.92011294157608692" green="0.08955111269898583"
-                                       blue="0.06785365018289484" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.92011294157608692" green="0.08955111269898583" blue="0.06785365018289484" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom"
-                               customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="errorMessageLabel" destination="4YD-4M-OsP" id="u1M-61-F3I"/>
@@ -93,71 +72,103 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="772" y="-258"/>
+            <point key="canvasLocation" x="1562" y="-400"/>
         </scene>
         <!--Signal Table View Controller - Signals-->
         <scene sceneID="QeP-CL-W6q">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9OP-5G-biA" userLabel="First Responder"
-                             sceneMemberID="firstResponder"/>
-                <tableViewController id="NQ1-Kt-6GD" customClass="ICSignalTableViewController"
-                                     sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO"
-                               contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain"
-                               rowHeight="137" sectionHeaderHeight="22" sectionFooterHeight="22" id="iWZ-HJ-ShT">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9OP-5G-biA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="NQ1-Kt-6GD" customClass="ICSignalTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="86" sectionHeaderHeight="22" sectionFooterHeight="22" id="iWZ-HJ-ShT">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue"
-                                           accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO"
-                                           indentationWidth="0.0" reuseIdentifier="signal" rowHeight="137"
-                                           id="uM3-Dp-NXL" customClass="ICSignalCell">
-                                <rect key="frame" x="0.0" y="22" width="320" height="137"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="signal" rowHeight="86" id="uM3-Dp-NXL" customClass="ICSignalCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="86"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES"
-                                      contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="136"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="85"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill"
-                                                   id="4l7-ap-lGl">
-                                            <rect key="frame" x="20" y="20" width="40" height="40"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"
-                                                              flexibleMaxY="YES"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" id="4l7-ap-lGl">
+                                            <rect key="frame" x="3" y="8" width="40" height="40"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO"
-                                               contentMode="left" text="Naam" lineBreakMode="tailTruncation"
-                                               baselineAdjustment="alignBaselines" minimumFontSize="10" id="dep-fv-aKV">
-                                            <rect key="frame" x="68" y="20" width="212" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"
-                                                              flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Naam" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="dep-fv-aKV">
+                                            <rect key="frame" x="51" y="8" width="218" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" white="1" alpha="1"
-                                                   colorSpace="calibratedWhite"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO"
-                                               contentMode="left" text="text van een signal" lineBreakMode="wordWrap"
-                                               numberOfLines="4" baselineAdjustment="alignBaselines"
-                                               minimumFontSize="10" adjustsFontSizeToFit="NO" id="fxF-qr-OzA">
-                                            <rect key="frame" x="68" y="39" width="212" height="77"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"
-                                                              flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="99d" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="sK8-12-vGz">
+                                            <rect key="frame" x="269" y="8" width="23" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Dit is zo een lange tekst die zo lang is dat het helemaal wordt afgekapt en daarom verschijnen er drie puntjes op het einde" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="fxF-qr-OzA">
+                                            <rect key="frame" x="51" y="23" width="241" height="62"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" white="1" alpha="1"
-                                                   colorSpace="calibratedWhite"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="senderImage" destination="4l7-ap-lGl" id="az2-4r-Fui"/>
                                     <outlet property="senderNameLabel" destination="dep-fv-aKV" id="aiR-sl-Gnk"/>
                                     <outlet property="signalTextLabel" destination="fxF-qr-OzA" id="Sem-5h-SBN"/>
-                                    <segue destination="GC3-ax-Gng" kind="push" identifier="showSignal"
-                                           id="0x7-Qr-Lrs"/>
+                                    <outlet property="timestampLabel" destination="sK8-12-vGz" id="oz7-9b-hrh"/>
+                                    <segue destination="GC3-ax-Gng" kind="push" identifier="showSignal" id="0x7-Qr-Lrs"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="shortSignal" rowHeight="57" id="4Hi-ug-AVz" customClass="ICSignalCell">
+                                <rect key="frame" x="0.0" y="108" width="320" height="57"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="56"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" id="xst-qA-3Bo">
+                                            <rect key="frame" x="3" y="8" width="40" height="40"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Naam" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="wid-uh-5HY">
+                                            <rect key="frame" x="51" y="8" width="218" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="99d" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="6Lc-ss-bj0">
+                                            <rect key="frame" x="269" y="8" width="23" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Dit is een korte tekst op één regel" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="CTx-8W-ABQ">
+                                            <rect key="frame" x="51" y="23" width="241" height="25"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="senderImage" destination="xst-qA-3Bo" id="o9W-UT-hd9"/>
+                                    <outlet property="senderNameLabel" destination="wid-uh-5HY" id="8RU-r9-81j"/>
+                                    <outlet property="signalTextLabel" destination="CTx-8W-ABQ" id="U5h-2K-3NH"/>
+                                    <outlet property="timestampLabel" destination="6Lc-ss-bj0" id="M62-rj-Umv"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -183,33 +194,35 @@
         <!--Signal Detail View Controller - Signal-->
         <scene sceneID="cVn-FV-vx6">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wfK-wE-ZYe" userLabel="First Responder"
-                             sceneMemberID="firstResponder"/>
-                <viewController id="GC3-ax-Gng" customClass="ICSignalDetailViewController"
-                                sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wfK-wE-ZYe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="GC3-ax-Gng" customClass="ICSignalDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="p1s-gY-k81">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" id="kxl-pz-gw4">
-                                <rect key="frame" x="20" y="90" width="280" height="326"/>
+                                <rect key="frame" x="20" y="68" width="280" height="328"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1"
-                                       colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left"
-                                   text="Verstuurder" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines"
-                                   minimumFontSize="10" id="cy5-oE-aJU">
-                                <rect key="frame" x="90" y="61" width="210" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Verstuurder" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="cy5-oE-aJU">
+                                <rect key="frame" x="68" y="20" width="208" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" id="xqb-r0-6XN">
-                                <rect key="frame" x="20" y="20" width="62" height="62"/>
+                                <rect key="frame" x="20" y="20" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="1 d" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="OJo-Ky-ykt">
+                                <rect key="frame" x="261" y="20" width="39" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -218,68 +231,34 @@
                         <outlet property="profilePhotoView" destination="xqb-r0-6XN" id="n0I-qr-GnS"/>
                         <outlet property="senderLabel" destination="cy5-oE-aJU" id="yXf-4s-CPX"/>
                         <outlet property="signalTextView" destination="kxl-pz-gw4" id="cLU-ge-JVX"/>
+                        <outlet property="timestampLabel" destination="OJo-Ky-ykt" id="tfX-x0-uRr"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1264" y="387"/>
+            <point key="canvasLocation" x="1562" y="377"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uIn-8x-hy3">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HLn-s8-Lue" userLabel="First Responder"
-                             sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HLn-s8-Lue" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="Nqe-7q-aTk" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES"
-                                   contentMode="scaleToFill" id="6dj-0W-a6U">
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="6dj-0W-a6U">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="NQ1-Kt-6GD" kind="relationship" relationship="rootViewController"
-                               id="FMk-k9-8aE"/>
+                        <segue destination="NQ1-Kt-6GD" kind="relationship" relationship="rootViewController" id="FMk-k9-8aE"/>
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="385" y="377"/>
+            <point key="canvasLocation" x="23" y="377"/>
         </scene>
     </scenes>
     <resources>
         <image name="cegekalogo.png" width="300" height="153"/>
     </resources>
-    <classes>
-        <class className="ICLoginViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ICLoginViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="login"/>
-                <relationship kind="outlet" name="errorMessageLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="loginActivityIndicator" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="loginTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="passwordTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="ICSignalCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ICSignalCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="senderImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="senderNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="signalTextLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="ICSignalDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ICSignalDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="profilePhotoView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="senderLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="signalTextView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="ICSignalTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ICSignalTableViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

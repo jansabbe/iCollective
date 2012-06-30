@@ -48,9 +48,26 @@
     return self.signalsArray.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ICSignalCell *cell = [tableView dequeueReusableCellWithIdentifier:@"signal"];
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     ICSimpleSignal *signal = [self.signalsArray objectAtIndex:indexPath.row];
+    return [self isShortSignal:signal] ? 57 : 86 ;
+}
+
+- (BOOL) isShortSignal: (ICSimpleSignal*) signal {
+    return [signal.bodyAsPlainText sizeWithFont: [UIFont systemFontOfSize:14.0f]
+                              constrainedToSize: CGSizeMake(241.0f, CGFLOAT_MAX)
+                                  lineBreakMode: UILineBreakModeTailTruncation].height < 30;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    ICSimpleSignal *signal = [self.signalsArray objectAtIndex:indexPath.row];
+    ICSignalCell *cell;
+    
+    if ([self isShortSignal:signal]) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"shortSignal"]; 
+    } else {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"signal"];   
+    }
     cell.signal = signal;
     return cell;
 }

@@ -21,4 +21,7 @@
 - (NSString *)senderPhotoUrl;
 
 - (NSString *)bodyAsPlainText;
+
+- (NSString *)fuzzyTimestamp;
+
 @end

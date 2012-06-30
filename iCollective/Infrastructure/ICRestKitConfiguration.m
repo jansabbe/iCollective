@@ -7,7 +7,7 @@
 
 #import "ICRestKitConfiguration.h"
 #import "ICSimpleSignal.h"
-#import "ICSimplePerson.h"
+#import "ICPerson.h"
 #import "ICUser.h"
 #import <RestKit/RestKit.h>
 
@@ -40,7 +40,7 @@
 }
 
 + (RKObjectMapping *)personMapping {
-    RKObjectMapping *personMapping = [RKObjectMapping mappingForClass:[ICSimplePerson class]];
+    RKObjectMapping *personMapping = [RKObjectMapping mappingForClass:[ICPerson class]];
 
     [personMapping mapKeyPath:@"best_full_name" toAttribute:@"fullName"];
     [personMapping mapKeyPath:@"username" toAttribute:@"username"];

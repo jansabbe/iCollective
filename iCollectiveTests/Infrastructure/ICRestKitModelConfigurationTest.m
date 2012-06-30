@@ -8,7 +8,7 @@
 #import "ICRestKitModelConfigurationTest.h"
 #import "ICRestKitConfiguration.h"
 #import "ICSimpleSignal.h"
-#import "ICSimplePerson.h"
+#import "ICPerson.h"
 #import "ICUserStub.h"
 #import <RestKit/RestKit.h>
 
@@ -41,7 +41,7 @@
     [self waitUntilDownloaded];
 
     STAssertTrue([loadedObjects count] > 0, @"Loaded objects is empty");
-    STAssertEqualObjects([[loadedObjects lastObject] class], [ICSimplePerson class], @"Expected ICSimplePerson in list");
+    STAssertEqualObjects([[loadedObjects lastObject] class], [ICPerson class], @"Expected ICSimplePerson in list");
 
 }
 

@@ -20,6 +20,7 @@
 @synthesize signalTextLabel = _signalTextLabel;
 @synthesize senderNameLabel = _senderNameLabel;
 @synthesize currentRequestForImage = _currentRequestForImage;
+@synthesize timestampLabel = _timestampLabel;
 
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -35,6 +36,7 @@
     self.senderImage.image = nil;
     self.senderNameLabel.text = self.signal.senderName;
     self.signalTextLabel.text = self.signal.bodyAsPlainText;
+    self.timestampLabel.text = self.signal.fuzzyTimestamp;
     self.currentRequestForImage = [[RKClient sharedClient] get:self.signal.senderPhotoUrl delegate:self];
 
 }

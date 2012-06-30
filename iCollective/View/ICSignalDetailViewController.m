@@ -18,10 +18,12 @@
 @synthesize signalTextView = _signalTextView;
 @synthesize profilePhotoView = _profilePhotoView;
 @synthesize signal = _signal;
+@synthesize timestampLabel = _timestampLabel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.senderLabel.text = self.signal.senderName;
+    self.timestampLabel.text = self.signal.fuzzyTimestamp;
 
     [[RKClient sharedClient] get:self.signal.senderPhotoUrl delegate:self];
     [self.signalTextView loadHTMLString:[self bodyAsHtml]
@@ -49,7 +51,7 @@
 }
 
 - (NSString *)bodyAsHtml {
-    return [NSString stringWithFormat:@"<html><head><style>* {font-family: Helvetica; font-size: 17; border:0px; padding:0px; margin:0px;}</style></head><body>%@</body></html>",
+    return [NSString stringWithFormat:@"<html><head><style>* {font-family: Helvetica; font-size: 14; border:0px; padding:0px; margin:0px;}</style></head><body>%@</body></html>",
                                       self.signal.body];
 
 }

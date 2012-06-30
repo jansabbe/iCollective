@@ -15,6 +15,7 @@
 @property(weak, nonatomic) IBOutlet UILabel *signalTextLabel;
 @property(weak, nonatomic) IBOutlet UILabel *senderNameLabel;
 @property(weak, nonatomic) IBOutlet UIImageView *senderImage;
+@property(weak, nonatomic) IBOutlet UILabel *timestampLabel;
 
 @property(nonatomic, strong) ICSimpleSignal *signal;
 @end

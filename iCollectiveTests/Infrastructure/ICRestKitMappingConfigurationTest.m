@@ -1,6 +1,6 @@
 #import "ICRestKitMappingConfigurationTest.h"
 #import "ICRestKitConfiguration.h"
-#import "ICSimplePerson.h"
+#import "ICPerson.h"
 #import "ICSimpleSignal.h"
 #import <RestKit/Testing.h>
 
@@ -13,7 +13,7 @@
 }
 
 - (void)testCanMapPerson {
-    ICSimplePerson *person = [self parsePerson:@"basicPerson.json"];
+    ICPerson *person = [self parsePerson:@"basicPerson.json"];
 
     STAssertEqualObjects(@"Abderrazzaq.Jebbar", person.fullName, nil);
     STAssertEqualObjects(@"abderrazzaq.jebbar@cegeka.be", person.email, nil);
@@ -23,7 +23,7 @@
 
 
 - (void)testCanMapPersonWithPhoneNumber {
-    ICSimplePerson *person = [self parsePerson:@"personWithPhonenumber.json"];
+    ICPerson *person = [self parsePerson:@"personWithPhonenumber.json"];
 
     STAssertEqualObjects(@"8881.112.22", person.homePhone, nil);
     STAssertEqualObjects(@"0494/16.10.56", person.mobilePhone, nil);
@@ -31,13 +31,13 @@
 }
 
 - (void)testCanMapPersonWithTwitter {
-    ICSimplePerson *person = [self parsePerson:@"personWithTwitter.json"];
+    ICPerson *person = [self parsePerson:@"personWithTwitter.json"];
 
     STAssertEqualObjects(@"janvr68", person.twitter, nil);
 }
 
 - (void)testCanMapPersonWithHomepage {
-    ICSimplePerson *person = [self parsePerson:@"personWithHomepage.json"];
+    ICPerson *person = [self parsePerson:@"personWithHomepage.json"];
 
     STAssertEqualObjects(@"http://www.janvandenbussche.be", person.personalHomepage, nil);
 }
@@ -75,7 +75,7 @@
     STAssertEqualObjects([NSNumber numberWithInt:5034], signal.inReplyToSignalId, nil);
 }
 
-- (ICSimplePerson *)parsePerson:(NSString *)jsonString {
+- (ICPerson *)parsePerson:(NSString *)jsonString {
     id parsedJSON = [RKTestFixture parsedObjectWithContentsOfFixture:jsonString];
     RKMappingTest *test = [RKMappingTest testForMapping:[ICRestKitConfiguration personMapping] object:parsedJSON];
     [test performMapping];

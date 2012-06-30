@@ -42,7 +42,7 @@
 		56B5D3A91525F2F2007982F5 /* ICRestKitConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F2007982F4 /* ICRestKitConfiguration.m */; };
 		56B5D3A91525F2F2007982F8 /* ICRestKitModelConfigurationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F2007982F7 /* ICRestKitModelConfigurationTest.m */; };
 		56B5D3A91525F2F2007982FE /* ICSimpleSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F2007982FD /* ICSimpleSignal.m */; };
-		56B5D3A91525F2F200798301 /* ICSimplePerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F200798300 /* ICSimplePerson.m */; };
+		56B5D3A91525F2F200798301 /* ICPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F200798300 /* ICPerson.m */; };
 		56B5D3A91525F2F200798305 /* ICLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F200798304 /* ICLoginViewController.m */; };
 		56B5D3A91525F2F200798308 /* ICUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F200798307 /* ICUser.m */; };
 		56B5D3A91525F2F20079830C /* ICUserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F20079830B /* ICUserTest.m */; };
@@ -56,6 +56,7 @@
 		56B5D3A91525F2F20079832A /* basicSignal.json in Resources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F200798329 /* basicSignal.json */; };
 		56B5D3A91525F2F20079832C /* signalToGroup.json in Resources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F20079832B /* signalToGroup.json */; };
 		56B5D3A91525F2F20079832E /* signalAsReply.json in Resources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F20079832D /* signalAsReply.json */; };
+		56B5D3A91525F2F200798331 /* NSDate+TimeAgo.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F200798330 /* NSDate+TimeAgo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,8 +158,8 @@
 		56B5D3A91525F2F2007982F9 /* ICRestKitModelConfigurationTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICRestKitModelConfigurationTest.h; sourceTree = "<group>"; };
 		56B5D3A91525F2F2007982FD /* ICSimpleSignal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSimpleSignal.m; sourceTree = "<group>"; };
 		56B5D3A91525F2F2007982FF /* ICSimpleSignal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSimpleSignal.h; sourceTree = "<group>"; };
-		56B5D3A91525F2F200798300 /* ICSimplePerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSimplePerson.m; sourceTree = "<group>"; };
-		56B5D3A91525F2F200798302 /* ICSimplePerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSimplePerson.h; sourceTree = "<group>"; };
+		56B5D3A91525F2F200798300 /* ICPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICPerson.m; sourceTree = "<group>"; };
+		56B5D3A91525F2F200798302 /* ICPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICPerson.h; sourceTree = "<group>"; };
 		56B5D3A91525F2F200798304 /* ICLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICLoginViewController.m; sourceTree = "<group>"; };
 		56B5D3A91525F2F200798306 /* ICLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICLoginViewController.h; sourceTree = "<group>"; };
 		56B5D3A91525F2F200798307 /* ICUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICUser.m; sourceTree = "<group>"; };
@@ -178,6 +179,8 @@
 		56B5D3A91525F2F200798329 /* basicSignal.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = basicSignal.json; sourceTree = "<group>"; };
 		56B5D3A91525F2F20079832B /* signalToGroup.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = signalToGroup.json; sourceTree = "<group>"; };
 		56B5D3A91525F2F20079832D /* signalAsReply.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = signalAsReply.json; sourceTree = "<group>"; };
+		56B5D3A91525F2F20079832F /* NSDate+TimeAgo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TimeAgo.h"; sourceTree = "<group>"; };
+		56B5D3A91525F2F200798330 /* NSDate+TimeAgo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TimeAgo.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +305,8 @@
 		3923D757A0A4204A4B0F63D4 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				56B5D3A91525F2F200798330 /* NSDate+TimeAgo.m */,
+				56B5D3A91525F2F20079832F /* NSDate+TimeAgo.h */,
 				56B5D3A91525F2F2007982F6 /* ICRestKitConfiguration.h */,
 				56B5D3A91525F2F2007982F4 /* ICRestKitConfiguration.m */,
 				56B5D3971525EBA6007982F0 /* DataModel.xcdatamodeld */,
@@ -350,8 +355,8 @@
 			children = (
 				56B5D3A91525F2F200798309 /* ICUser.h */,
 				56B5D3A91525F2F200798307 /* ICUser.m */,
-				56B5D3A91525F2F200798302 /* ICSimplePerson.h */,
-				56B5D3A91525F2F200798300 /* ICSimplePerson.m */,
+				56B5D3A91525F2F200798302 /* ICPerson.h */,
+				56B5D3A91525F2F200798300 /* ICPerson.m */,
 				56B5D3A91525F2F2007982FF /* ICSimpleSignal.h */,
 				56B5D3A91525F2F2007982FD /* ICSimpleSignal.m */,
 				56B5D39C1525EC7B007982F0 /* ICSignal.h */,
@@ -568,12 +573,13 @@
 				56B5D39E1525EC7B007982F0 /* ICSignal.m in Sources */,
 				56B5D3A91525F2F2007982F5 /* ICRestKitConfiguration.m in Sources */,
 				56B5D3A91525F2F2007982FE /* ICSimpleSignal.m in Sources */,
-				56B5D3A91525F2F200798301 /* ICSimplePerson.m in Sources */,
+				56B5D3A91525F2F200798301 /* ICPerson.m in Sources */,
 				567ED087156F83A200B909D2 /* (null) in Sources */,
 				56B5D3A91525F2F200798305 /* ICLoginViewController.m in Sources */,
 				56B5D3A91525F2F200798308 /* ICUser.m in Sources */,
 				564A88B0156FC87400029B8C /* ICSignalDetailViewController.m in Sources */,
 				568148B01581286D001DBE1C /* ICSignalCell.m in Sources */,
+				56B5D3A91525F2F200798331 /* NSDate+TimeAgo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

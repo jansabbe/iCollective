@@ -22,4 +22,18 @@
     STAssertEqualObjects([signal bodyAsPlainText], @"Dit is tof & cool. 1 < 2 en 2 > 1", nil);
 }
 
+- (void)testGetFuzzyTime {
+    ICSimpleSignal *signal = [[ICSimpleSignal alloc] init];
+    signal.timestamp = [NSDate date];
+
+    STAssertEqualObjects(@"now", [signal fuzzyTimestamp], nil);
+}
+
+
+- (void)testGetFuzzyTimeWithoutTimestamp {
+    ICSimpleSignal *signal = [[ICSimpleSignal alloc] init];
+
+    STAssertNil([signal fuzzyTimestamp], nil);
+}
+
 @end

@@ -6,6 +6,7 @@
 
 
 #import "ICSimpleSignal.h"
+#import "NSDate+TimeAgo.h"
 
 
 @implementation ICSimpleSignal
@@ -43,6 +44,10 @@
 - (NSString *)bodyAsHtml {
     return [NSString stringWithFormat:@"<html><head><style>* {font-family: Helvetica; font-size: 14; border:0px; padding:0px; margin:0px;}</style></head><body>%@</body></html>",
                                       self.body];
+}
+
+- (NSString *)fuzzyTimestamp {
+    return [self.timestamp timeAgo];
 }
 
 @end
