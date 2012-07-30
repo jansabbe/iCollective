@@ -50,24 +50,14 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     ICSimpleSignal *signal = [self.signalsArray objectAtIndex:indexPath.row];
-    return [self isShortSignal:signal] ? 57 : 86 ;
+    return [self heightForSignal:signal];
 }
 
-- (BOOL) isShortSignal: (ICSimpleSignal*) signal {
-    return [signal.bodyAsPlainText sizeWithFont: [UIFont systemFontOfSize:14.0f]
-                              constrainedToSize: CGSizeMake(241.0f, CGFLOAT_MAX)
-                                  lineBreakMode: UILineBreakModeTailTruncation].height < 30;
-}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ICSimpleSignal *signal = [self.signalsArray objectAtIndex:indexPath.row];
-    ICSignalCell *cell;
-    
-    if ([self isShortSignal:signal]) {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"shortSignal"]; 
-    } else {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"signal"];   
-    }
+    ICSignalCell *cell = [tableView dequeueReusableCellWithIdentifier: @"signal"];
     cell.signal = signal;
     return cell;
 }
@@ -97,5 +87,12 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+
+- (CGFloat) heightForSignal: (ICSimpleSignal*) signal {
+    CGFloat heightOfBody = [signal.bodyAsPlainText sizeWithFont: [UIFont systemFontOfSize:14.0f]
+                                              constrainedToSize: CGSizeMake(241.0f, CGFLOAT_MAX)
+                                                  lineBreakMode: UILineBreakModeWordWrap].height;
+    return 28.0 + heightOfBody + 9.0;
+}
 
 @end

@@ -24,8 +24,10 @@
     [super viewDidLoad];
     self.senderLabel.text = self.signal.senderName;
     self.timestampLabel.text = self.signal.fuzzyTimestamp;
-
-    [[RKClient sharedClient] get:self.signal.senderPhotoUrl delegate:self];
+    [[RKClient sharedClient] get:self.signal.senderPhotoUrl usingBlock:^(RKRequest *request) {
+        request.delegate = self;
+        request.cacheTimeoutInterval = 24*60*60;        
+    }];
     [self.signalTextView loadHTMLString:[self bodyAsHtml]
             baseURL:[NSURL URLWithString:@"https://cegeka.socialtext.net/"]];
     [self.signalTextView setDelegate:self];

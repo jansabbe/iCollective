@@ -32,13 +32,17 @@
 }
 
 - (void)updateUI {
-    [self.currentRequestForImage cancel];
+    [self.currentRequestForImage reset];
     self.senderImage.image = nil;
     self.senderNameLabel.text = self.signal.senderName;
     self.signalTextLabel.text = self.signal.bodyAsPlainText;
     self.timestampLabel.text = self.signal.fuzzyTimestamp;
-    self.currentRequestForImage = [[RKClient sharedClient] get:self.signal.senderPhotoUrl delegate:self];
-
+    [[RKClient sharedClient] get:self.signal.senderPhotoUrl usingBlock:^(RKRequest *request) {
+        request.delegate = self;
+        request.cacheTimeoutInterval = 24*60*60;
+        self.currentRequestForImage = request;
+        
+    }];
 }
 
 - (void)request:(RKRequest *)request didLoadResponse:(RKResponse *)response {
