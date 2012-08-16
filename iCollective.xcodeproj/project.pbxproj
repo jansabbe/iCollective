@@ -28,6 +28,10 @@
 		56208ADA154A896F00239D15 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56208ACB154A87FB00239D15 /* SystemConfiguration.framework */; };
 		56208ADB154A897700239D15 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56208ACD154A880600239D15 /* QuartzCore.framework */; };
 		56208ADC154A897D00239D15 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 56208ACF154A881200239D15 /* libxml2.dylib */; };
+		56400E1F15C84FEC007F2D81 /* speaker.png in Resources */ = {isa = PBXBuildFile; fileRef = 56400E1D15C84FEC007F2D81 /* speaker.png */; };
+		56400E2215C850C2007F2D81 /* speaker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56400E2115C850C2007F2D81 /* speaker@2x.png */; };
+		56400E2515C850F4007F2D81 /* man.png in Resources */ = {isa = PBXBuildFile; fileRef = 56400E2315C850F4007F2D81 /* man.png */; };
+		56400E2615C850F4007F2D81 /* man@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56400E2415C850F4007F2D81 /* man@2x.png */; };
 		564A88B0156FC87400029B8C /* ICSignalDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564A88AF156FC87400029B8C /* ICSignalDetailViewController.m */; };
 		567ED087156F83A200B909D2 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		568148B01581286D001DBE1C /* ICSignalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 568148AF1581286D001DBE1C /* ICSignalCell.m */; };
@@ -138,6 +142,10 @@
 		56208ACB154A87FB00239D15 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		56208ACD154A880600239D15 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		56208ACF154A881200239D15 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		56400E1D15C84FEC007F2D81 /* speaker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speaker.png; sourceTree = "<group>"; };
+		56400E2115C850C2007F2D81 /* speaker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "speaker@2x.png"; sourceTree = "<group>"; };
+		56400E2315C850F4007F2D81 /* man.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = man.png; sourceTree = "<group>"; };
+		56400E2415C850F4007F2D81 /* man@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "man@2x.png"; sourceTree = "<group>"; };
 		564A88AE156FC87400029B8C /* ICSignalDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSignalDetailViewController.h; sourceTree = "<group>"; };
 		564A88AF156FC87400029B8C /* ICSignalDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSignalDetailViewController.m; sourceTree = "<group>"; };
 		568148AE1581286D001DBE1C /* ICSignalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSignalCell.h; sourceTree = "<group>"; };
@@ -344,8 +352,12 @@
 		5682A3FB156F7AC300C1D4F7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				56400E2315C850F4007F2D81 /* man.png */,
+				56400E2415C850F4007F2D81 /* man@2x.png */,
 				5682A3FC156F7ADB00C1D4F7 /* cegekalogo.png */,
 				5682A3FD156F7ADB00C1D4F7 /* cegekalogo@2x.png */,
+				56400E1D15C84FEC007F2D81 /* speaker.png */,
+				56400E2115C850C2007F2D81 /* speaker@2x.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -452,6 +464,9 @@
 /* Begin PBXProject section */
 		3923D757A0A4204A4B0F6392 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+			};
 			buildConfigurationList = 3923D757A0A4204A4B0F6393 /* Build configuration list for PBXProject "iCollective" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -525,6 +540,10 @@
 				3923D757A0A4204A4B0F63D7 /* README in Resources */,
 				5682A3FE156F7ADB00C1D4F7 /* cegekalogo.png in Resources */,
 				5682A3FF156F7ADB00C1D4F7 /* cegekalogo@2x.png in Resources */,
+				56400E1F15C84FEC007F2D81 /* speaker.png in Resources */,
+				56400E2215C850C2007F2D81 /* speaker@2x.png in Resources */,
+				56400E2515C850F4007F2D81 /* man.png in Resources */,
+				56400E2615C850F4007F2D81 /* man@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
