@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11D50b" minimumToolsVersion="Xcode 4.1" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1487" systemVersion="12A269" minimumToolsVersion="Xcode 4.1" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Person" representedClassName="ICPerson" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fullName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="homePhone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mobilePhone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="personalHomepage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="personId" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="twitter" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="workPhone" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Signal" representedClassName="ICSignal" syncable="YES">
-        <attribute name="body" attributeType="String" syncable="YES"/>
-        <attribute name="senderName" attributeType="String" syncable="YES"/>
-        <attribute name="timestamp" attributeType="Date" syncable="YES"/>
+        <attribute name="body" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="inReplyToSignalId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="senderId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="senderName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="signalId" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="inReplyToSignal" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Signal" syncable="YES"/>
+        <relationship name="sender" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Person" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Signal" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="Signal" positionX="-450" positionY="288" width="128" height="90"/>
+        <element name="Person" positionX="-162" positionY="441" width="128" height="178"/>
     </elements>
 </model>

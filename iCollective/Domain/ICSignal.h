@@ -8,16 +8,26 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "ICPerson.h"
 
 @interface ICSignal : NSManagedObject
 
-@property(nonatomic, strong) NSString *body;
-
-@property(nonatomic, strong) NSString *senderName;
-
+@property(nonatomic, strong) NSNumber *signalId;
+@property(nonatomic, copy) NSString *body;
+@property(nonatomic, copy) NSString *senderName;
 @property(nonatomic, strong) NSDate *timestamp;
+@property(nonatomic, strong) NSNumber *senderId;
+@property(nonatomic, strong) NSNumber *inReplyToSignalId;
+@property(nonatomic, strong) ICPerson *sender;
+@property(nonatomic, strong) ICSignal *inReplyToSignal;
 
-+ (ICSignal *)signalWithBody:(NSString *)body sender:(NSString *)senderName timestamp:(NSDate *)timestamp inContext:(NSManagedObjectContext *)managedObjectContext;
++ (ICSignal *)signalInContext:(NSManagedObjectContext *)managedObjectContext;
+
+- (NSString *)senderPhotoUrl;
+
+- (NSString *)bodyAsPlainText;
+
+- (NSString *)fuzzyTimestamp;
 
 
 @end

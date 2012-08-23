@@ -31,8 +31,9 @@
 
 
 - (void)testCanPersistSignal {
-    [ICSignal signalWithBody:@"Testing" sender:@"Jonnie" timestamp:[NSDate date] inContext:self.context];
-
+    ICSignal *signal = [ICSignal signalInContext:self.context];
+    signal.signalId = @5;
+    
     NSError *error;
     [self.context save:&error];
 
@@ -45,7 +46,11 @@
     NSString *expectedSender = @"Jonnie";
     NSDate *expectedTimestamp = [NSDate date];
 
-    [ICSignal signalWithBody:expectedBody sender:expectedSender timestamp:expectedTimestamp inContext:self.context];
+    ICSignal *signal = [ICSignal signalInContext:self.context];
+    signal.signalId = @5;
+    signal.body = expectedBody;
+    signal.senderName = expectedSender;
+    signal.timestamp = expectedTimestamp;
     [self.context save:NULL];
 
     NSError *error;

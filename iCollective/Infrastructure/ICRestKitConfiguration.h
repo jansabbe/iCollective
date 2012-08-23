@@ -19,8 +19,8 @@ static NSString *const baseurl = @"https://cegeka.socialtext.net/data/";
 
 + (RKObjectManager *)objectManager;
 
-+ (RKObjectMapping *)signalMapping;
++ (RKManagedObjectMapping *)personMappingInObjectStore: (RKManagedObjectStore*) store;
 
-+ (RKObjectMapping *)personMapping;
++ (RKManagedObjectMapping *)signalMappingInObjectStore: (RKManagedObjectStore*) store;
 
 @end

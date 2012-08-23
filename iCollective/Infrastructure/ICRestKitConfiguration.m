@@ -6,7 +6,7 @@
 
 
 #import "ICRestKitConfiguration.h"
-#import "ICSimpleSignal.h"
+#import "ICSignal.h"
 #import "ICPerson.h"
 #import "ICUser.h"
 #import <RestKit/RestKit.h>
@@ -26,43 +26,49 @@
 
 }
 
-+ (RKObjectMapping *)signalMapping {
-    RKObjectMapping *signalMapping = [RKObjectMapping mappingForClass:[ICSimpleSignal class]];
++ (RKManagedObjectMapping *)signalMappingInObjectStore: (RKManagedObjectStore*) store {
+    RKManagedObjectMapping *signalMapping = [RKManagedObjectMapping mappingForEntityWithName:@"Signal" inManagedObjectStore:store];
     [signalMapping mapKeyPath:@"body" toAttribute:@"body"];
     [signalMapping mapKeyPath:@"best_full_name" toAttribute:@"senderName"];
     [signalMapping mapKeyPath:@"at" toAttribute:@"timestamp"];
     [signalMapping mapKeyPath:@"user_id" toAttribute:@"senderId"];
-    [signalMapping mapKeyPath:@"likers" toAttribute:@"personIdsLikingThis"];
+    //[signalMapping mapKeyPath:@"likers" toAttribute:@"personIdsLikingThis"];
     [signalMapping mapKeyPath:@"signal_id" toAttribute:@"signalId"];
-    [signalMapping mapKeyPath:@"group_ids" toAttribute:@"groupIdsPostedTo"];
+    //[signalMapping mapKeyPath:@"group_ids" toAttribute:@"groupIdsPostedTo"];
     [signalMapping mapKeyPath:@"in_reply_to.signal_id" toAttribute:@"inReplyToSignalId"];
+    signalMapping.primaryKeyAttribute = @"signalId";
     return signalMapping;
 }
 
-+ (RKObjectMapping *)personMapping {
-    RKObjectMapping *personMapping = [RKObjectMapping mappingForClass:[ICPerson class]];
++ (RKManagedObjectMapping *)personMappingInObjectStore: (RKManagedObjectStore*) store {
+    RKManagedObjectMapping *personMapping = [RKManagedObjectMapping mappingForEntityWithName:@"Person" inManagedObjectStore:store];
 
     [personMapping mapKeyPath:@"best_full_name" toAttribute:@"fullName"];
     [personMapping mapKeyPath:@"username" toAttribute:@"username"];
     [personMapping mapKeyPath:@"email" toAttribute:@"email"];
-    [personMapping mapKeyPath:@"id" toAttribute:@"id"];
+    [personMapping mapKeyPath:@"id" toAttribute:@"personId"];
     [personMapping mapKeyPath:@"personal_url" toAttribute:@"personalHomepage"];
     [personMapping mapKeyPath:@"mobile_phone" toAttribute:@"mobilePhone"];
     [personMapping mapKeyPath:@"work_phone" toAttribute:@"workPhone"];
     [personMapping mapKeyPath:@"home_phone" toAttribute:@"homePhone"];
     [personMapping mapKeyPath:@"twitter_sn" toAttribute:@"twitter"];
+    personMapping.primaryKeyAttribute = @"personId";
     return personMapping;
 }
 
 + (RKObjectManager *)objectManager {
     RKObjectManager *objectManager = [RKObjectManager managerWithBaseURLString:baseurl];
     [objectManager setClient:[RKClient sharedClient]];
+    RKManagedObjectStore* objectStore = [RKManagedObjectStore objectStoreWithStoreFilename:@"iCollective.sqlite"];
+    
+    objectManager.objectStore = objectStore;
+    objectManager.serializationMIMEType = RKMIMETypeJSON;
+    objectManager.acceptMIMEType = RKMIMETypeJSON;
 
-    [objectManager setSerializationMIMEType:RKMIMETypeJSON];
-    [objectManager setAcceptMIMEType:RKMIMETypeJSON];
-
-    [[objectManager mappingProvider] setObjectMapping:[self signalMapping] forResourcePathPattern:@"/signals"];
-    [[objectManager mappingProvider] setObjectMapping:[self personMapping] forResourcePathPattern:@"/people"];
+    [[objectManager mappingProvider]
+        setObjectMapping:[self signalMappingInObjectStore:objectStore] forResourcePathPattern:@"/signals"];
+    [[objectManager mappingProvider]
+        setObjectMapping:[self personMappingInObjectStore:objectStore] forResourcePathPattern:@"/people"];
 
     return objectManager;
 }

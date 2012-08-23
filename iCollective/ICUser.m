@@ -54,7 +54,7 @@
     }
 
     [ICRestKitConfiguration configureRestKitWithUser:self];
-    RKRequest *request = [[RKClient sharedClient] get:[self profilePageUrl] delegate:nil];
+    __weak RKRequest *request = [[RKClient sharedClient] get:[self profilePageUrl] delegate:nil];
     [request setOnDidLoadResponse:^void(RKResponse *response) {
         [request cancel];
         canLoginBlock();

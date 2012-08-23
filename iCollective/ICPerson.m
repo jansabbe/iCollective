@@ -13,11 +13,15 @@
 @synthesize fullName = _fullName;
 @synthesize mobilePhone = _mobilePhone;
 @synthesize workPhone = _workPhone;
-@synthesize id = _id;
+@synthesize personId = _personId;
 @synthesize email = _email;
 @synthesize personalHomepage = _personalHomepage;
 @synthesize homePhone = _homePhone;
 @synthesize twitter = _twitter;
 
+
++ (ICPerson *)personInContext:(NSManagedObjectContext *)managedObjectContext {
+    return [NSEntityDescription insertNewObjectForEntityForName:@"Person" inManagedObjectContext:managedObjectContext];
+}
 
 @end
