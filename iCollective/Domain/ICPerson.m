@@ -24,4 +24,21 @@
     return [NSEntityDescription insertNewObjectForEntityForName:@"Person" inManagedObjectContext:managedObjectContext];
 }
 
+- (NSString *)firstLetterOfName {
+    [self willAccessValueForKey:@"firstLetterOfName"];
+    NSString* result = [self.fullNameInUppercase substringToIndex:1];
+    [self didAccessValueForKey:@"firstLetterOfName"];
+    return result;
+}
+
+- (NSString *)fullNameInUppercase {
+    return [self.fullName uppercaseString] ;
+}
+
+
+- (NSString *)photoUrl {
+    return [NSString stringWithFormat:@"/people/%@/photo/medium", self.personId];
+}
+
+
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "ICSignalDetailViewController.h"
-#import "ICSimpleSignal.h"
+#import "ICSignal.h"
 
 @interface ICSignalDetailViewController ()
 

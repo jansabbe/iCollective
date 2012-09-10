@@ -21,4 +21,7 @@
 
 + (ICPerson *)personInContext:(NSManagedObjectContext *)managedObjectContext;
 
+- (NSString *) firstLetterOfName;
+- (NSString *) fullNameInUppercase;
+- (NSString *)photoUrl;
 @end

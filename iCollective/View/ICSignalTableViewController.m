@@ -8,90 +8,116 @@
 
 #import "ICRestKitConfiguration.h"
 #import "ICSignalTableViewController.h"
-#import "ICSimpleSignal.h"
+#import "ICSignal.h"
+#import "ICSignalCell.h"
 #import "ICUser.h"
 #import "ICSignalDetailViewController.h"
-#import "ICSignalCell.h"
+#import <RestKit/NSManagedObject+ActiveRecord.h>
 #import <RestKit/RestKit.h>
+#import <RestKit/UI.h>
 
 @interface ICSignalTableViewController ()
-
+@property(nonatomic, strong) RKFetchedResultsTableController *tableController;
 @end
 
 @implementation ICSignalTableViewController
+@synthesize tableController;
 
-@synthesize signalsArray;
-
-- (IBAction)loadDataFromSocialText {
-    RKObjectManager *manager = [ICRestKitConfiguration objectManager];
-    [manager loadObjectsAtResourcePath:@"/signals?limit=50" delegate:self];
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[ICUser currentUser] configureRestKitAndRunIfUserCanLogin:^void() {
-        [self loadDataFromSocialText];
+        [self configureTableController];
     } ifUserCannotLogin:^void() {
         [self performSegueWithIdentifier:@"showLogin" sender:self];
     }];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+- (void)configureTableController {
+    self.tableController = [[RKObjectManager sharedManager] fetchedResultsTableControllerForTableViewController:self];
+    self.tableController.resourcePath = @"/signals?limit=60";
+    self.tableController.variableHeightRows = YES;
+    self.tableController.autoRefreshFromNetwork = YES;
+    self.tableController.pullToRefreshEnabled = YES;
+    self.tableController.delegate = self;
+
+    if (self.signal) {
+        self.tableController.predicate = [NSPredicate predicateWithFormat:@"signalId == %@ or inReplyToSignalId == %@",
+                                                                          self.signal.signalId, self.signal.signalId];
+        NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"signalId" ascending:YES];
+        self.tableController.sortDescriptors = [NSArray arrayWithObject:descriptor];
     } else {
-        return YES;
+        NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"signalId" ascending:NO];
+        self.tableController.sortDescriptors = [NSArray arrayWithObject:descriptor];
     }
+
+    RKTableViewCellMapping *cellMapping = [RKTableViewCellMapping cellMapping];
+    cellMapping.cellClassName = @"ICSignalCell";
+    cellMapping.reuseIdentifier = @"signal";
+    cellMapping.heightOfCellForObjectAtIndexPath = ^(ICSignal *signal, NSIndexPath *indexPath) {
+        return [self heightForSignal:signal];
+    };
+
+    [cellMapping mapKeyPath:@"bodyAsPlainText" toAttribute:@"signalTextLabel.text"];
+    [cellMapping mapKeyPath:@"senderName" toAttribute:@"senderNameLabel.text"];
+    [cellMapping mapKeyPath:@"fuzzyTimestamp" toAttribute:@"timestampLabel.text"];
+    [cellMapping mapKeyPath:@"senderPhotoUrl" toAttribute:@"senderPhotoUrl"];
+    cellMapping.onCellWillAppearForObjectAtIndexPath = ^(UITableViewCell *cell, id object, NSIndexPath *indexPath) {
+        ICSignal* signal = object;
+        ICSignalCell* signalCell = (ICSignalCell*)cell;
+        signalCell.replyToImage.hidden = !signal.isPartOfConversation;
+        if (signal.isReplyToOtherSignal) {
+            signalCell.replyToImage.image = [UIImage imageNamed:@"transarrow"];
+        } else {
+            signalCell.replyToImage.image = [UIImage imageNamed:@"speechbaloon"];
+        }
+    };
+    
+    [self.tableController mapObjectsWithClass:[ICSignal class] toTableCellsWithMapping:cellMapping];
+    [self.tableController loadTable];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.signalsArray.count;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ICSimpleSignal *signal = [self.signalsArray objectAtIndex:indexPath.row];
-    return [self heightForSignal:signal];
-}
-
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ICSimpleSignal *signal = [self.signalsArray objectAtIndex:indexPath.row];
-    ICSignalCell *cell = [tableView dequeueReusableCellWithIdentifier: @"signal"];
-    cell.signal = signal;
-    return cell;
-}
-
-- (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error {
-    NSLog(@"Error occurred while loading signals: %@", error);
-}
-
-- (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {
-    signalsArray = objects;
-    [[self tableView] reloadData];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.tableController loadTable];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // [NSManagedObjectContext contextForCurrentThread]
     if ([segue.identifier isEqualToString:@"showLogin"]) {
         ICLoginViewController *controller = segue.destinationViewController;
         controller.delegate = self;
-    } else if ([segue.identifier isEqualToString:@"showSignal"]) {
+    } else if ([segue.identifier isEqualToString:@"showSignalDetail"]) {
         ICSignalDetailViewController *controller = segue.destinationViewController;
-        ICSignalCell *signalCell = sender;
-        controller.signal = signalCell.signal;
+        controller.signal = sender;
+    } else if ([segue.identifier isEqualToString:@"showSignalConversation"]) {
+        ICSignal *originalSignal = sender;
+        ICSignalTableViewController *controller = segue.destinationViewController;
+        controller.signal = [originalSignal signalThatStartedConversation];
     }
 }
 
+
 - (void)loginViewControllerDidCorrectlyLogin:(ICLoginViewController *)controller {
-    [self loadDataFromSocialText];
+    [self.tableController loadTable];
+    [self configureTableController];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (void)tableController:(RKAbstractTableController *)aTableController didSelectCell:(UITableViewCell *)cell forObject:(id)object atIndexPath:(NSIndexPath *)indexPath {
+    ICSignal *signal = [self.tableController objectForRowAtIndexPath:indexPath];
+    if (!self.signal && signal.isPartOfConversation) {
+        [self performSegueWithIdentifier:@"showSignalConversation" sender:signal];
+    } else {
+        [self performSegueWithIdentifier:@"showSignalDetail" sender:signal];
+    }
+}
 
-- (CGFloat) heightForSignal: (ICSimpleSignal*) signal {
-    CGFloat heightOfBody = [signal.bodyAsPlainText sizeWithFont: [UIFont systemFontOfSize:14.0f]
-                                              constrainedToSize: CGSizeMake(241.0f, CGFLOAT_MAX)
-                                                  lineBreakMode: UILineBreakModeWordWrap].height;
+
+- (CGFloat)heightForSignal:(ICSignal *)signal {
+    CGFloat heightOfBody = [signal.bodyAsPlainText sizeWithFont:[UIFont systemFontOfSize:14.0f]
+            constrainedToSize:CGSizeMake(241.0f, CGFLOAT_MAX)
+                lineBreakMode:UILineBreakModeWordWrap].height;
     return 28.0 + heightOfBody + 9.0;
 }
 

@@ -4,12 +4,6 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
     </content>
-    <content url="file://$USER_HOME$/Library/Caches/appCode10/DerivedData/iCollective-3242989/Build/Products/Debug-iphonesimulator/iCollective.app">
-      <sourceFolder url="file://$USER_HOME$/Library/Caches/appCode10/DerivedData/iCollective-3242989/Build/Products/Debug-iphonesimulator/iCollective.app" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/Library/Caches/appCode10/DerivedData/iCollective-3242989/Build/Products/Debug-iphonesimulator/iCollectiveTests.octest">
-      <sourceFolder url="file://$USER_HOME$/Library/Caches/appCode10/DerivedData/iCollective-3242989/Build/Products/Debug-iphonesimulator/iCollectiveTests.octest" isTestSource="false" />
-    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>

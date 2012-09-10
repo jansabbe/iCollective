@@ -1,7 +1,7 @@
 #import "ICRestKitMappingConfigurationTest.h"
 #import "ICRestKitConfiguration.h"
 #import "ICPerson.h"
-#import "ICSimpleSignal.h"
+#import "ICSignal.h"
 #import <RestKit/Testing.h>
 
 
@@ -44,7 +44,7 @@
 
 
 - (void)testCanMapSignal {
-    ICSimpleSignal *signal = [self parseSignal:@"basicSignal.json"];
+    ICSignal *signal = [self parseSignal:@"basicSignal.json"];
 
     STAssertEqualObjects(@"Business development at Argenta. Yesterday we discussed ...", signal.body, nil);
     //STAssertEqualObjects([NSArray arrayWithObject:@"7"], signal.personIdsLikingThis, nil);
@@ -63,17 +63,19 @@
     STAssertEquals(35, actualDateComponents.second, nil);
 }
 
-//- (void)testCanMapSignalPostedToGroup {
-//    ICSimpleSignal *signal = [self parseSignal:@"signalToGroup.json"];
-
-//    STAssertEqualObjects([NSArray arrayWithObject:@"14"], signal.groupIdsPostedTo, nil);
-//}
 
 - (void)testCanMapSignalPostedAsReplyToOtherSignal {
-    ICSimpleSignal *signal = [self parseSignal:@"signalAsReply.json"];
+    ICSignal *signal = [self parseSignal:@"signalAsReply.json"];
 
+    STAssertEqualObjects([NSNumber numberWithInt:14], signal.groupId, nil);
+}
+
+- (void)testCanMapSignalPostedToGroup {
+    ICSignal *signal = [self parseSignal:@"signalToGroup.json"];
+    
     STAssertEqualObjects([NSNumber numberWithInt:5034], signal.inReplyToSignalId, nil);
 }
+
 
 - (ICPerson *)parsePerson:(NSString *)jsonString {
     id parsedJSON = [RKTestFixture parsedObjectWithContentsOfFixture:jsonString];
@@ -82,7 +84,7 @@
     return [test destinationObject];
 }
 
-- (ICSimpleSignal *)parseSignal:(NSString *)jsonString {
+- (ICSignal *)parseSignal:(NSString *)jsonString {
     id parsedJSON = [RKTestFixture parsedObjectWithContentsOfFixture:jsonString];
     RKMappingTest *test = [RKMappingTest testForMapping:[ICRestKitConfiguration signalMappingInObjectStore:[self objectStore]] object:parsedJSON];
     [test performMapping];

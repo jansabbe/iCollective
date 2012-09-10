@@ -18,8 +18,11 @@
 @property(nonatomic, strong) NSDate *timestamp;
 @property(nonatomic, strong) NSNumber *senderId;
 @property(nonatomic, strong) NSNumber *inReplyToSignalId;
-@property(nonatomic, strong) ICPerson *sender;
-@property(nonatomic, strong) ICSignal *inReplyToSignal;
+@property(nonatomic, readonly) BOOL isPartOfConversation;
+@property(nonatomic, readonly) BOOL isReplyToOtherSignal;
+@property(nonatomic, readonly) BOOL hasReplies;
+@property(nonatomic, strong) NSNumber *groupId;
+@property(nonatomic, strong) NSArray* personIdsLikingThis;
 
 + (ICSignal *)signalInContext:(NSManagedObjectContext *)managedObjectContext;
 
@@ -29,5 +32,6 @@
 
 - (NSString *)fuzzyTimestamp;
 
+- (ICSignal *)signalThatStartedConversation;
 
 @end

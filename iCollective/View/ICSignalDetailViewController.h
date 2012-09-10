@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <RestKit/RestKit.h>
 
-@class ICSimpleSignal;
+@class ICSignal;
 
 @interface ICSignalDetailViewController : UIViewController <UIWebViewDelegate, RKRequestDelegate>
 @property(weak, nonatomic) IBOutlet UILabel *senderLabel;
@@ -17,5 +17,5 @@
 @property(weak, nonatomic) IBOutlet UIImageView *profilePhotoView;
 @property(weak, nonatomic) IBOutlet UILabel *timestampLabel;
 
-@property(nonatomic, strong) ICSimpleSignal *signal;
+@property(nonatomic, strong) ICSignal *signal;
 @end

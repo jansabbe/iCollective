@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <RestKit/RestKit.h>
+#import <RestKit/UI.h>
 #import "ICLoginViewController.h"
 
-@interface ICSignalTableViewController : UITableViewController <RKObjectLoaderDelegate, ICLoginViewControllerDelegate>
+@class ICSignal;
 
-@property(nonatomic, retain) NSArray *signalsArray;
+@interface ICSignalTableViewController : UITableViewController <ICLoginViewControllerDelegate, RKFetchedResultsTableControllerDelegate>
+
+@property (nonatomic, strong) ICSignal *signal;
 
 @end

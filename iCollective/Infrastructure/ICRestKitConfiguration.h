@@ -23,4 +23,8 @@ static NSString *const baseurl = @"https://cegeka.socialtext.net/data/";
 
 + (RKManagedObjectMapping *)signalMappingInObjectStore: (RKManagedObjectStore*) store;
 
++ (RKRequestQueue *) profilePicQueue;
+
++ (void)fetchImage:(NSString *)photoUrl delegate:(id <RKRequestDelegate>)delegate;
+
 @end

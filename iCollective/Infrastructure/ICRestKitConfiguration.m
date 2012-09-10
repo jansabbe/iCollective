@@ -66,10 +66,32 @@
     objectManager.acceptMIMEType = RKMIMETypeJSON;
 
     [[objectManager mappingProvider]
-        setObjectMapping:[self signalMappingInObjectStore:objectStore] forResourcePathPattern:@"/signals"];
+        setObjectMapping:[self signalMappingInObjectStore:objectStore] forResourcePathPattern:@"/signals" withFetchRequestBlock:^NSFetchRequest *(NSString *resourcePath) {
+        return [NSFetchRequest fetchRequestWithEntityName:@"Signal"];
+    }];
+
     [[objectManager mappingProvider]
-        setObjectMapping:[self personMappingInObjectStore:objectStore] forResourcePathPattern:@"/people"];
+        setObjectMapping:[self personMappingInObjectStore:objectStore] forResourcePathPattern:@"/people" withFetchRequestBlock:^NSFetchRequest *(NSString *resourcePath) {
+        return [NSFetchRequest fetchRequestWithEntityName:@"Person"];
+    }];
 
     return objectManager;
 }
+
+
++ (RKRequestQueue *) profilePicQueue {
+    RKRequestQueue *queue = [RKRequestQueue requestQueueWithName:@"profilePicQueue"];
+    [queue start];
+    return queue;
+}
+
++ (void)fetchImage:(NSString *)photoUrl delegate:(id <RKRequestDelegate>) delegate {
+    [self.profilePicQueue cancelRequestsWithDelegate:delegate];
+    [[RKClient sharedClient] get:photoUrl usingBlock:^(RKRequest *request) {
+        request.delegate = delegate;
+        request.cacheTimeoutInterval = 24*60*60;
+        request.queue = self.profilePicQueue;
+    }];
+}
+
 @end

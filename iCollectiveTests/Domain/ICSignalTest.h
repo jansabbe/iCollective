@@ -2,5 +2,5 @@
 #import <SenTestingKit/SenTestingKit.h>
 
 
-@interface ICSimpleSignalTest : SenTestCase
+@interface ICSignalTest : SenTestCase
 @end

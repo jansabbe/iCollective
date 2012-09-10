@@ -43,7 +43,7 @@
 }
 
 - (NSString *)profilePageUrl {
-    return [NSString stringWithFormat:@"/people/%@", self.userName];
+    return [NSString stringWithFormat:@"/users/%@", self.userName];
 }
 
 - (RKRequest *)configureRestKitAndRunIfUserCanLogin:(void (^)())canLoginBlock
