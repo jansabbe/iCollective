@@ -47,6 +47,8 @@
 		568148B01581286D001DBE1C /* ICSignalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 568148AF1581286D001DBE1C /* ICSignalCell.m */; };
 		5682A3FE156F7ADB00C1D4F7 /* cegekalogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5682A3FC156F7ADB00C1D4F7 /* cegekalogo.png */; };
 		5682A3FF156F7ADB00C1D4F7 /* cegekalogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5682A3FD156F7ADB00C1D4F7 /* cegekalogo@2x.png */; };
+		568EE30A15FE820D0092C3F7 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 568EE30915FE820D0092C3F7 /* profile.png */; };
+		568EE31A15FE88CC0092C3F7 /* RKGHLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 568EE31915FE88CC0092C3F7 /* RKGHLoadingView.m */; };
 		56B1C4C115F677A7002D9037 /* group.json in Resources */ = {isa = PBXBuildFile; fileRef = 56B1C4C015F677A7002D9037 /* group.json */; };
 		56B5D3991525EBA6007982F0 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3971525EBA6007982F0 /* DataModel.xcdatamodeld */; };
 		56B5D39E1525EC7B007982F0 /* ICSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D39D1525EC7B007982F0 /* ICSignal.m */; };
@@ -70,12 +72,13 @@
 		56B5D3A91525F2F20079832E /* signalAsReply.json in Resources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F20079832D /* signalAsReply.json */; };
 		56B5D3A91525F2F200798331 /* NSDate+TimeAgo.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F200798330 /* NSDate+TimeAgo.m */; };
 		56B5D3A91525F2F200798333 /* ICPersonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F200798332 /* ICPersonTableViewController.m */; };
-		56B5D3A91525F2F200798336 /* ICPersonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F200798335 /* ICPersonCell.m */; };
+		56B5D3A91525F2F200798336 /* ICImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F200798335 /* ICImageCell.m */; };
 		56B5D3A91525F2F200798339 /* ICPersonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B5D3A91525F2F200798338 /* ICPersonDetailViewController.m */; };
 		56D5B24D15F22C9600417E0F /* cegekaappicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56D5B24C15F22C9600417E0F /* cegekaappicon@2x.png */; };
 		56D5B24F15F22C9A00417E0F /* cegekaappicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 56D5B24E15F22C9A00417E0F /* cegekaappicon.png */; };
 		56D5B25115F231C400417E0F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 56D5B25015F231C400417E0F /* Default.png */; };
 		56D5B25315F231CC00417E0F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56D5B25215F231CC00417E0F /* Default@2x.png */; };
+		D0B03B879FAA08CB1562B7E6 /* ICGroupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B03F724B698C95169FA8D8 /* ICGroupTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,6 +184,9 @@
 		568148AF1581286D001DBE1C /* ICSignalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSignalCell.m; sourceTree = "<group>"; };
 		5682A3FC156F7ADB00C1D4F7 /* cegekalogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cegekalogo.png; sourceTree = "<group>"; };
 		5682A3FD156F7ADB00C1D4F7 /* cegekalogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cegekalogo@2x.png"; sourceTree = "<group>"; };
+		568EE30915FE820D0092C3F7 /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
+		568EE31815FE88CC0092C3F7 /* RKGHLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKGHLoadingView.h; sourceTree = "<group>"; };
+		568EE31915FE88CC0092C3F7 /* RKGHLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKGHLoadingView.m; sourceTree = "<group>"; };
 		56B1C4C015F677A7002D9037 /* group.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = group.json; sourceTree = "<group>"; };
 		56B5D3981525EBA6007982F0 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		56B5D39C1525EC7B007982F0 /* ICSignal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICSignal.h; path = Domain/ICSignal.h; sourceTree = "<group>"; };
@@ -215,14 +221,16 @@
 		56B5D3A91525F2F200798330 /* NSDate+TimeAgo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TimeAgo.m"; sourceTree = "<group>"; };
 		56B5D3A91525F2F200798332 /* ICPersonTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICPersonTableViewController.m; sourceTree = "<group>"; };
 		56B5D3A91525F2F200798334 /* ICPersonTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICPersonTableViewController.h; sourceTree = "<group>"; };
-		56B5D3A91525F2F200798335 /* ICPersonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICPersonCell.m; sourceTree = "<group>"; };
-		56B5D3A91525F2F200798337 /* ICPersonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICPersonCell.h; sourceTree = "<group>"; };
+		56B5D3A91525F2F200798335 /* ICImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICImageCell.m; sourceTree = "<group>"; };
+		56B5D3A91525F2F200798337 /* ICImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICImageCell.h; sourceTree = "<group>"; };
 		56B5D3A91525F2F200798338 /* ICPersonDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICPersonDetailViewController.m; sourceTree = "<group>"; };
 		56B5D3A91525F2F20079833A /* ICPersonDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICPersonDetailViewController.h; sourceTree = "<group>"; };
 		56D5B24C15F22C9600417E0F /* cegekaappicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cegekaappicon@2x.png"; sourceTree = "<group>"; };
 		56D5B24E15F22C9A00417E0F /* cegekaappicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cegekaappicon.png; sourceTree = "<group>"; };
 		56D5B25015F231C400417E0F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		56D5B25215F231CC00417E0F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		D0B03606E46D6290D276A009 /* ICGroupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICGroupTableViewController.h; sourceTree = "<group>"; };
+		D0B03F724B698C95169FA8D8 /* ICGroupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICGroupTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -392,6 +400,7 @@
 		5682A3FB156F7AC300C1D4F7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				568EE30915FE820D0092C3F7 /* profile.png */,
 				5622682515F66FEC00062D4C /* connections.png */,
 				5622682615F66FEC00062D4C /* connections@2x.png */,
 				5678616615F14D87009E3664 /* speechbaloon.png */,
@@ -426,10 +435,14 @@
 		56B5D3A91525F2F200798303 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				568EE31815FE88CC0092C3F7 /* RKGHLoadingView.h */,
+				568EE31915FE88CC0092C3F7 /* RKGHLoadingView.m */,
+				D0B03606E46D6290D276A009 /* ICGroupTableViewController.h */,
+				D0B03F724B698C95169FA8D8 /* ICGroupTableViewController.m */,
 				56B5D3A91525F2F20079833A /* ICPersonDetailViewController.h */,
 				56B5D3A91525F2F200798338 /* ICPersonDetailViewController.m */,
-				56B5D3A91525F2F200798337 /* ICPersonCell.h */,
-				56B5D3A91525F2F200798335 /* ICPersonCell.m */,
+				56B5D3A91525F2F200798337 /* ICImageCell.h */,
+				56B5D3A91525F2F200798335 /* ICImageCell.m */,
 				56B5D3A91525F2F200798334 /* ICPersonTableViewController.h */,
 				56B5D3A91525F2F200798332 /* ICPersonTableViewController.m */,
 				56B5D3A91525F2F200798306 /* ICLoginViewController.h */,
@@ -609,6 +622,7 @@
 				56D5B25315F231CC00417E0F /* Default@2x.png in Resources */,
 				5622682715F66FEC00062D4C /* connections.png in Resources */,
 				5622682815F66FEC00062D4C /* connections@2x.png in Resources */,
+				568EE30A15FE820D0092C3F7 /* profile.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,11 +676,13 @@
 				568148B01581286D001DBE1C /* ICSignalCell.m in Sources */,
 				56B5D3A91525F2F200798331 /* NSDate+TimeAgo.m in Sources */,
 				56B5D3A91525F2F200798333 /* ICPersonTableViewController.m in Sources */,
-				56B5D3A91525F2F200798336 /* ICPersonCell.m in Sources */,
+				56B5D3A91525F2F200798336 /* ICImageCell.m in Sources */,
 				56B5D3A91525F2F200798339 /* ICPersonDetailViewController.m in Sources */,
 				5622682B15F674AD00062D4C /* ICGroup.m in Sources */,
 				5622683015F6754300062D4C /* ICPerson.m in Sources */,
 				5622683115F6754300062D4C /* ICUser.m in Sources */,
+				D0B03B879FAA08CB1562B7E6 /* ICGroupTableViewController.m in Sources */,
+				568EE31A15FE88CC0092C3F7 /* RKGHLoadingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

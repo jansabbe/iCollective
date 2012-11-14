@@ -12,9 +12,11 @@
 #import "ICLoginViewController.h"
 
 @class ICSignal;
+@class ICGroup;
 
 @interface ICSignalTableViewController : UITableViewController <ICLoginViewControllerDelegate, RKFetchedResultsTableControllerDelegate>
 
 @property (nonatomic, strong) ICSignal *signal;
 
+@property(nonatomic, strong) ICGroup *group;
 @end

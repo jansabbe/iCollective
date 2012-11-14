@@ -1,15 +1,16 @@
-#import "ICPersonTableViewController.h"
-#import "ICPerson.h"
-#import "ICPersonDetailViewController.h"
-#import <RestKit/UI.h>
+#import "ICGroupTableViewController.h"
+#import "ICGroup.h"
+#import "ICSignalTableViewController.h"
 #import <RestKit/RestKit.h>
+#import <RestKit/UI.h>
 #import "RKGHLoadingView.h"
 
-@interface ICPersonTableViewController ()
+@interface ICGroupTableViewController ()
 @property(nonatomic, strong) RKFetchedResultsTableController *tableController;
 @end
 
-@implementation ICPersonTableViewController
+
+@implementation ICGroupTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -18,28 +19,26 @@
 
 - (void)configureTableController {
     self.tableController = [[RKObjectManager sharedManager] fetchedResultsTableControllerForTableViewController:self];
-    self.tableController.resourcePath = @"/people?fields=home_phone,work_phone,mobile_phone";
+    self.tableController.resourcePath = @"/groups";
     self.tableController.autoRefreshFromNetwork = YES;
     self.tableController.pullToRefreshEnabled = YES;
-    self.tableController.sectionNameKeyPath = @"fullName";
-    self.tableController.showsSectionIndexTitles = YES;
 
     
     RKGHLoadingView *loadingView = [[RKGHLoadingView alloc] initWithFrame:CGRectMake(0, 0, 80, 80)];
     loadingView.center = self.tableView.center;
     self.tableController.loadingView = loadingView;
     
-    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"fullName" ascending:YES selector:@selector(caseInsensitiveCompare:)];
+    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES selector:@selector(caseInsensitiveCompare:)];
     self.tableController.sortDescriptors = [NSArray arrayWithObject:descriptor];
 
     RKTableViewCellMapping *cellMapping = [RKTableViewCellMapping cellMapping];
     cellMapping.cellClassName = @"ICImageCell";
-    cellMapping.reuseIdentifier = @"person";
+    cellMapping.reuseIdentifier = @"group";
 
-    [cellMapping mapKeyPath:@"fullName" toAttribute:@"bigLabel.text"];
-    [cellMapping mapKeyPath:@"photoUrl" toAttribute:@"socialTextImageUrl"];
+    [cellMapping mapKeyPath:@"name" toAttribute:@"bigLabel.text"];
+    [cellMapping mapKeyPath:@"groupPicUrl" toAttribute:@"socialTextImageUrl"];
 
-    [self.tableController mapObjectsWithClass:[ICPerson class] toTableCellsWithMapping:cellMapping];
+    [self.tableController mapObjectsWithClass:[ICGroup class] toTableCellsWithMapping:cellMapping];
     [self.tableController loadTable];
 }
 
@@ -49,12 +48,11 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"showPerson"]) {
+    if ([segue.identifier isEqualToString:@"showGroup"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        ICPerson *person = [self.tableController objectForRowAtIndexPath:indexPath];
-        ICPersonDetailViewController *controller = segue.destinationViewController;
-        controller.person = person;
+        ICGroup *group = [self.tableController objectForRowAtIndexPath:indexPath];
+        ICSignalTableViewController* controller = segue.destinationViewController;
+        controller.group = group;
     }
 }
-
 @end

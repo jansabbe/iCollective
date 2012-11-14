@@ -12,4 +12,6 @@
 @property (nonatomic,strong) NSString* name;
 @property (nonatomic,strong) NSString* groupDescription;
 @property (nonatomic,strong) NSNumber* groupId;
+@property (nonatomic, readonly) NSString *groupPicUrl;
+
 @end

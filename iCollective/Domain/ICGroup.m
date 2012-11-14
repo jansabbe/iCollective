@@ -12,4 +12,9 @@
 @dynamic groupId;
 @dynamic groupDescription;
 @dynamic name;
+
+- (NSString *)groupPicUrl {
+    return [NSString stringWithFormat:@"/groups/%@/photo/medium", self.groupId];
+}
+
 @end

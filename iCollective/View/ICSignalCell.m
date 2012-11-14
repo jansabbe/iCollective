@@ -26,7 +26,7 @@
 
 - (void) setSenderPhotoUrl:(NSString *)senderPhotoUrl {
     _senderPhotoUrl = senderPhotoUrl;
-    self.senderImage.image = nil;
+    self.senderImage.image = [UIImage imageNamed:@"profile"];
     [ICRestKitConfiguration fetchImage:senderPhotoUrl delegate:self];
 }
 

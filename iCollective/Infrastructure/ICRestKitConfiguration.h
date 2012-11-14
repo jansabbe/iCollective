@@ -27,4 +27,5 @@ static NSString *const baseurl = @"https://cegeka.socialtext.net/data/";
 
 + (void)fetchImage:(NSString *)photoUrl delegate:(id <RKRequestDelegate>)delegate;
 
++ (RKObjectMapping *)groupMappingInObjectStore:(RKManagedObjectStore *)store;
 @end

@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.objectManager = [ICRestKitConfiguration objectManager];
-
+    
     return YES;
 }
 

@@ -32,9 +32,9 @@
     [signalMapping mapKeyPath:@"best_full_name" toAttribute:@"senderName"];
     [signalMapping mapKeyPath:@"at" toAttribute:@"timestamp"];
     [signalMapping mapKeyPath:@"user_id" toAttribute:@"senderId"];
-    //[signalMapping mapKeyPath:@"likers" toAttribute:@"personIdsLikingThis"];
+    [signalMapping mapKeyPath:@"likers" toAttribute:@"personIdsLikingThis"];
     [signalMapping mapKeyPath:@"signal_id" toAttribute:@"signalId"];
-    //[signalMapping mapKeyPath:@"group_ids" toAttribute:@"groupIdsPostedTo"];
+    [signalMapping mapKeyPath:@"group_ids.@max.self" toAttribute:@"groupId"];
     [signalMapping mapKeyPath:@"in_reply_to.signal_id" toAttribute:@"inReplyToSignalId"];
     signalMapping.primaryKeyAttribute = @"signalId";
     return signalMapping;
@@ -56,6 +56,17 @@
     return personMapping;
 }
 
++ (RKObjectMapping *)groupMappingInObjectStore:(RKManagedObjectStore *)store {
+    RKManagedObjectMapping *groupMapping = [RKManagedObjectMapping mappingForEntityWithName:@"Group" inManagedObjectStore:store];
+
+    [groupMapping mapKeyPath:@"group_id" toAttribute:@"groupId"];
+    [groupMapping mapKeyPath:@"description" toAttribute:@"groupDescription"];
+    [groupMapping mapKeyPath:@"name" toAttribute:@"name"];
+
+    groupMapping.primaryKeyAttribute = @"groupId";
+    return groupMapping;
+}
+
 + (RKObjectManager *)objectManager {
     RKObjectManager *objectManager = [RKObjectManager managerWithBaseURLString:baseurl];
     [objectManager setClient:[RKClient sharedClient]];
@@ -64,7 +75,7 @@
     objectManager.objectStore = objectStore;
     objectManager.serializationMIMEType = RKMIMETypeJSON;
     objectManager.acceptMIMEType = RKMIMETypeJSON;
-
+    
     [[objectManager mappingProvider]
         setObjectMapping:[self signalMappingInObjectStore:objectStore] forResourcePathPattern:@"/signals" withFetchRequestBlock:^NSFetchRequest *(NSString *resourcePath) {
         return [NSFetchRequest fetchRequestWithEntityName:@"Signal"];
@@ -75,12 +86,18 @@
         return [NSFetchRequest fetchRequestWithEntityName:@"Person"];
     }];
 
+    [[objectManager mappingProvider]
+            setObjectMapping:[self groupMappingInObjectStore:objectStore] forResourcePathPattern:@"/groups" withFetchRequestBlock:^NSFetchRequest *(NSString *resourcePath) {
+        return [NSFetchRequest fetchRequestWithEntityName:@"Group"];
+    }];
+
     return objectManager;
 }
 
 
 + (RKRequestQueue *) profilePicQueue {
     RKRequestQueue *queue = [RKRequestQueue requestQueueWithName:@"profilePicQueue"];
+    queue.showsNetworkActivityIndicatorWhenBusy = YES;
     [queue start];
     return queue;
 }
