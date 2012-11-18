@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <RestKit/RestKit.h>
 
 @class ICSignal;
 
-@interface ICSignalDetailViewController : UIViewController <UIWebViewDelegate, RKRequestDelegate>
+@interface ICSignalDetailViewController : UIViewController <UIWebViewDelegate>
 @property(weak, nonatomic) IBOutlet UILabel *senderLabel;
 @property(weak, nonatomic) IBOutlet UIWebView *signalTextView;
 @property(weak, nonatomic) IBOutlet UIImageView *profilePhotoView;

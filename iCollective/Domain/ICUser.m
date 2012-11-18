@@ -1,40 +1,43 @@
 #import "ICUser.h"
-#import <RestKit/RestKit.h>
-#import "ICRestKitConfiguration.h"
+#import "NSString+ICUtils.h"
+#import <AFNetworking/AFNetworking.h>
+#import <AFIncrementalStore/AFRESTClient.h>
+
+#import "ICSocialTextAPI.h"
 
 
 @interface ICUser ()
-
+@property(readwrite, nonatomic) NSString *userName;
+@property(readwrite, nonatomic) NSString *password;
 @end
 
-@implementation ICUser
-@synthesize userName = _userName;
-@synthesize password = _password;
-
-- (ICUser *)initWithUsername:(NSString *)userName andPassword:(NSString *)password {
-    self = [super init];
-    if (self) {
-        _userName = userName;
-        _password = password;
-    }
-    return self;
+@implementation ICUser {
+    ICSocialTextAPI *_socialTextClient;
 }
 
 + (ICUser *)currentUser {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *username = [userDefaults stringForKey:USERNAME_KEY];
     NSString *password = [userDefaults stringForKey:PASSWORD_KEY];
-
     return [[ICUser alloc] initWithUsername:username andPassword:password];
 }
 
-- (void)setUsername:(NSString *)username andPassword:(NSString *)password {
-    if ([username rangeOfString:@"@"].location == NSNotFound) {
-        _userName = [username stringByAppendingString:@"@cegeka.be"];
-    } else {
-        _userName = username;
+- (ICUser *)initWithUsername:(NSString *)userName andPassword:(NSString *)password {
+    self = [super init];
+    if (self) {
+        self.userName = userName;
+        self.password = password;
     }
-    _password = password;
+    return self;
+}
+
+- (void)setUsername:(NSString *)username andPassword:(NSString *)password {
+    if (![username contains:@"@"]) {
+        self.userName = [username stringByAppendingString:@"@cegeka.be"];
+    } else {
+        self.userName = username;
+    }
+    self.password = password;
 
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:self.userName forKey:USERNAME_KEY];
@@ -43,32 +46,32 @@
 }
 
 - (NSString *)profilePageUrl {
-    return [NSString stringWithFormat:@"/users/%@", self.userName];
-}
-
-- (RKRequest *)configureRestKitAndRunIfUserCanLogin:(void (^)())canLoginBlock
-                                  ifUserCannotLogin:(void (^)())cannotLoginBlock {
-    if (![self hasUsernameAndPassword]) {
-        cannotLoginBlock();
-        return nil;
-    }
-
-    [ICRestKitConfiguration configureRestKitWithUser:self];
-    __weak RKRequest *request = [[RKClient sharedClient] get:[self profilePageUrl] delegate:nil];
-    [request setOnDidLoadResponse:^void(RKResponse *response) {
-        [request cancel];
-        canLoginBlock();
-    }];
-
-    [request setOnDidFailLoadWithError:^void(NSError *error) {
-        [request cancel];
-        cannotLoginBlock();
-    }];
-    return request;
+    return [NSString stringWithFormat:@"users/%@", self.userName];
 }
 
 - (BOOL)hasUsernameAndPassword {
     return (self.userName && self.password);
+}
+
+- (ICSocialTextAPI *)socialTextClient {
+    if (!_socialTextClient) {
+        _socialTextClient = [ICSocialTextAPI clientForUser:self];
+    }
+    return _socialTextClient;
+}
+
+- (void)ifUserCanLogin:(void (^)())canLoginBlock
+     ifUserCannotLogin:(void (^)())cannotLoginBlock {
+    if (![self hasUsernameAndPassword]) {
+        cannotLoginBlock();
+        return;
+    }
+
+    [self.socialTextClient getPath:self.profilePageUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        canLoginBlock();
+    }                      failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        cannotLoginBlock();
+    }];
 }
 
 @end

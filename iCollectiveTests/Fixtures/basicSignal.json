@@ -1,21 +1,21 @@
 {
-    "mentioned_users": [],
-    "attachments": [],
-    "group_ids": [],
-    "num_replies": "0",
-    "account_ids": [
+    "mentioned_users":[],
+    "attachments":[],
+    "group_ids":[],
+    "num_replies":"0",
+    "account_ids":[
         "4"
     ],
-    "tags": [],
-    "annotations": [],
-    "uri": "/st/signals/368969d477fe9665d809e6b2b8028021",
-    "body": "Business development at Argenta. Yesterday we discussed ...",
-    "hash": "368969d477fe9665d809e6b2b8028021",
-    "best_full_name": "Johan Lybaert",
-    "likers": [
+    "tags":[],
+    "annotations":[],
+    "uri":"/st/signals/368969d477fe9665d809e6b2b8028021",
+    "body":"Business development at Argenta. Yesterday we discussed ...",
+    "hash":"368969d477fe9665d809e6b2b8028021",
+    "best_full_name":"Johan Lybaert",
+    "likers":[
         "7"
     ],
-    "at": "2012-06-28 07:54:35.434653Z",
-    "user_id": "73",
-    "signal_id": "5038"
+    "at":"2012-06-28 07:54:35.434653Z",
+    "user_id":"73",
+    "signal_id":"5038"
 }

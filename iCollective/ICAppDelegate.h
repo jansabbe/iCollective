@@ -8,11 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@class RKObjectManager;
 
 @interface ICAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property(strong, nonatomic) UIWindow *window;
-@property (nonatomic, strong, readwrite) RKObjectManager *objectManager;
 
 @end

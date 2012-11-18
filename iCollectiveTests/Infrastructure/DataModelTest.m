@@ -8,32 +8,19 @@
 #import <CoreData/CoreData.h>
 #import "DataModelTest.h"
 #import "ICSignal.h"
+#import "ICStubCoreDataContext.h"
 
 
 @implementation DataModelTest
-@synthesize model = _model;
-@synthesize coordinator = _coordinator;
-@synthesize store = _store;
-@synthesize context = _context;
-
 
 - (void)setUp {
-    self.model = [NSManagedObjectModel mergedModelFromBundles:[NSBundle allBundles]];
-    self.coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.model];
-    self.store = [self.coordinator addPersistentStoreWithType:NSInMemoryStoreType
-                                                configuration:nil URL:nil options:nil error:NULL];
-
-    self.context = [[NSManagedObjectContext alloc] init];
-    self.context.persistentStoreCoordinator = self.coordinator;
-
-
+    self.coreDataContext = [ICStubCoreDataContext inMemoryContext];
 }
-
 
 - (void)testCanPersistSignal {
     ICSignal *signal = [ICSignal signalInContext:self.context];
-    signal.signalId = @5;
-    
+    signal.signalId = @"5";
+
     NSError *error;
     [self.context save:&error];
 
@@ -43,13 +30,11 @@
 
 - (void)testCanLoadSignal {
     NSString *expectedBody = @"Testing";
-    NSString *expectedSender = @"Jonnie";
     NSDate *expectedTimestamp = [NSDate date];
 
     ICSignal *signal = [ICSignal signalInContext:self.context];
-    signal.signalId = @5;
+    signal.signalId = @"5";
     signal.body = expectedBody;
-    signal.senderName = expectedSender;
     signal.timestamp = expectedTimestamp;
     [self.context save:NULL];
 
@@ -61,9 +46,10 @@
     ICSignal *actualSignal = results.lastObject;
     STAssertNotNil(actualSignal, @"Fetch request should have returned atleast one result");
     STAssertEqualObjects(expectedBody, actualSignal.body, nil);
-    STAssertEqualObjects(expectedSender, actualSignal.senderName, nil);
     STAssertEqualObjects(expectedTimestamp, actualSignal.timestamp, nil);
 }
 
-
+- (NSManagedObjectContext*) context {
+    return self.coreDataContext.context;
+}
 @end

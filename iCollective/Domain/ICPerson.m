@@ -9,16 +9,16 @@
 
 
 @implementation ICPerson
-@synthesize username = _username;
-@synthesize fullName = _fullName;
-@synthesize mobilePhone = _mobilePhone;
-@synthesize workPhone = _workPhone;
-@synthesize personId = _personId;
-@synthesize email = _email;
-@synthesize personalHomepage = _personalHomepage;
-@synthesize homePhone = _homePhone;
-@synthesize twitter = _twitter;
-
+@dynamic username;
+@dynamic homePhone;
+@dynamic workPhone;
+@dynamic mobilePhone;
+@dynamic fullName;
+@dynamic email;
+@dynamic personId;
+@dynamic personalHomepage;
+@dynamic twitter;
+@dynamic liked;
 
 + (ICPerson *)personInContext:(NSManagedObjectContext *)managedObjectContext {
     return [NSEntityDescription insertNewObjectForEntityForName:@"Person" inManagedObjectContext:managedObjectContext];
@@ -26,13 +26,13 @@
 
 - (NSString *)firstLetterOfName {
     [self willAccessValueForKey:@"firstLetterOfName"];
-    NSString* result = [self.fullNameInUppercase substringToIndex:1];
+    NSString *result = [self.fullNameInUppercase substringToIndex:1];
     [self didAccessValueForKey:@"firstLetterOfName"];
     return result;
 }
 
 - (NSString *)fullNameInUppercase {
-    return [self.fullName uppercaseString] ;
+    return [self.fullName uppercaseString];
 }
 
 

@@ -1,4 +1,4 @@
 @interface NSDate (TimeAgo)
--(NSString *)timeAgo;    
+- (NSString *)timeAgo;
 @end
 

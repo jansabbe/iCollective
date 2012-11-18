@@ -15,13 +15,16 @@
 @property(nonatomic, strong) NSString *mobilePhone;
 @property(nonatomic, strong) NSString *workPhone;
 @property(nonatomic, strong) NSString *email;
-@property(nonatomic, strong) NSNumber *personId;
+@property(nonatomic, strong) NSString *personId;
 @property(nonatomic, strong) NSString *personalHomepage;
 @property(nonatomic, strong) NSString *twitter;
+@property(nonatomic, strong) NSSet* liked;
 
 + (ICPerson *)personInContext:(NSManagedObjectContext *)managedObjectContext;
 
-- (NSString *) firstLetterOfName;
-- (NSString *) fullNameInUppercase;
+- (NSString *)firstLetterOfName;
+
+- (NSString *)fullNameInUppercase;
+
 - (NSString *)photoUrl;
 @end

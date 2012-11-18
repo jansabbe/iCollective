@@ -8,24 +8,20 @@
 
 #import "ICSignal.h"
 #import "NSDate+TimeAgo.h"
-#import "RestKit.h"
 
 @implementation ICSignal
 @dynamic signalId;
 @dynamic body;
-@dynamic senderName;
 @dynamic timestamp;
-@dynamic senderId;
-@dynamic inReplyToSignalId;
-@dynamic groupId;
-@dynamic personIdsLikingThis;
+@dynamic group;
+@dynamic inReplyToSignal;
+@dynamic sender;
+@dynamic likers;
+@dynamic replies;
+
 
 + (ICSignal *)signalInContext:(NSManagedObjectContext *)managedObjectContext {
     return [NSEntityDescription insertNewObjectForEntityForName:@"Signal" inManagedObjectContext:managedObjectContext];
-}
-
-- (NSString *)senderPhotoUrl {
-    return [NSString stringWithFormat:@"/people/%@/photo/small_photo", self.senderId];
 }
 
 - (NSString *)bodyAsPlainText {
@@ -52,31 +48,6 @@
 
 - (NSString *)fuzzyTimestamp {
     return [self.timestamp timeAgo];
-}
-
-- (BOOL)isPartOfConversation {
-    return self.isReplyToOtherSignal || self.hasReplies;
-}
-
-- (BOOL)isReplyToOtherSignal {
-    return ![@0 isEqualToNumber:self.inReplyToSignalId];
-}
-
-- (BOOL)hasReplies {
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Signal"];
-    request.predicate = [NSPredicate predicateWithFormat:@"inReplyToSignalId = %@", self.signalId];
-    NSUInteger nbReplies = [[NSManagedObjectContext contextForCurrentThread] countForFetchRequest:request error:NULL];
-    return nbReplies > 0;
-}
-
-- (ICSignal *)signalThatStartedConversation {
-    if (self.isReplyToOtherSignal) {
-        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Signal"];
-        request.predicate = [NSPredicate predicateWithFormat:@"signalId = %@", self.inReplyToSignalId];
-        return [[[NSManagedObjectContext contextForCurrentThread] executeFetchRequest:request error:NULL] lastObject];
-    }
-    
-    return self;
 }
 
 @end

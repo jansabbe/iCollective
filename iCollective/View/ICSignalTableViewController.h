@@ -7,16 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <RestKit/RestKit.h>
-#import <RestKit/UI.h>
 #import "ICLoginViewController.h"
 
 @class ICSignal;
 @class ICGroup;
 
-@interface ICSignalTableViewController : UITableViewController <ICLoginViewControllerDelegate, RKFetchedResultsTableControllerDelegate>
+@interface ICSignalTableViewController : UITableViewController <ICLoginViewControllerDelegate>
 
-@property (nonatomic, strong) ICSignal *signal;
+@property(nonatomic, strong) ICSignal *signal;
 
 @property(nonatomic, strong) ICGroup *group;
 @end

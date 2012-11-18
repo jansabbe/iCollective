@@ -1,7 +1,7 @@
 #import "ICUserTest.h"
 #import "ICUser.h"
-#import "Network.h"
 #import "ICUserStub.h"
+#import "ICSocialTextAPI.h"
 
 
 @implementation ICUserTest {
@@ -32,12 +32,13 @@
     ICUser *correctUser = [ICUserStub testUser];
     __block BOOL canLoginBlockCalled = NO;
 
-    RKRequest *request = [correctUser configureRestKitAndRunIfUserCanLogin:^() {
+    [correctUser ifUserCanLogin:^{
         canLoginBlockCalled = YES;
-    }                                                    ifUserCannotLogin:^() {
+    }                                             ifUserCannotLogin:^{
         STFail(@"should be able to login");
     }];
-    [self waitUntilDownloaded:request];
+
+    [self waitUntilNetworkFinished: correctUser];
     STAssertTrue(canLoginBlockCalled, @"should have called login block");
 }
 
@@ -45,16 +46,15 @@
     ICUser *incorrectUser = [[ICUser alloc] initWithUsername:@"blub" andPassword:@"blab"];
     __block BOOL cannotLoginBlockCalled = NO;
 
-    RKRequest *request = [incorrectUser configureRestKitAndRunIfUserCanLogin:^() {
+    [incorrectUser ifUserCanLogin:^{
         STFail(@"should not be able to login");
-    }                                                      ifUserCannotLogin:^() {
+    }                                               ifUserCannotLogin:^{
         cannotLoginBlockCalled = YES;
     }];
-    [self waitUntilDownloaded:request];
 
+
+    [self waitUntilNetworkFinished: incorrectUser];
     STAssertTrue(cannotLoginBlockCalled, @"should have called cannot login block");
-    STAssertTrue(request.isCancelled, @"should cancel request");
-
 }
 
 
@@ -62,13 +62,12 @@
     ICUser *incorrectUser = [[ICUser alloc] initWithUsername:nil andPassword:@"blab"];
     __block BOOL cannotLoginBlockCalled = NO;
 
-    RKRequest *request = [incorrectUser configureRestKitAndRunIfUserCanLogin:^() {
+    [incorrectUser ifUserCanLogin:^{
         STFail(@"should not be able to login");
-    }                                                      ifUserCannotLogin:^() {
+    }                                               ifUserCannotLogin:^{
         cannotLoginBlockCalled = YES;
     }];
 
-    STAssertNil(request, @"should not have created request");
     STAssertTrue(cannotLoginBlockCalled, @"should have called cannot login block");
 }
 
@@ -77,24 +76,18 @@
     ICUser *incorrectUser = [[ICUser alloc] initWithUsername:@"username" andPassword:nil];
     __block BOOL cannotLoginBlockCalled = NO;
 
-    RKRequest *request = [incorrectUser configureRestKitAndRunIfUserCanLogin:^() {
+    [incorrectUser ifUserCanLogin:^{
         STFail(@"should not be able to login");
-    }                                                      ifUserCannotLogin:^() {
+    }                                               ifUserCannotLogin:^{
         cannotLoginBlockCalled = YES;
     }];
 
-    STAssertNil(request, @"should not have created request");
     STAssertTrue(cannotLoginBlockCalled, @"should have called cannot login block");
 }
 
-- (void)waitUntilDownloaded:(RKRequest *)request {
-    int timeout = 30;
-    do {
-        [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:1]];
-        timeout--;
-    } while (request.isLoading && !request.isCancelled && timeout > 0);
-
-    STAssertTrue(timeout > 0, @"Timeout reached");
+- (void)waitUntilNetworkFinished: (ICUser *) user {
+    [[user.socialTextClient operationQueue] waitUntilAllOperationsAreFinished];
+    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:1]];
 }
 
 @end

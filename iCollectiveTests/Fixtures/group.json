@@ -1,14 +1,14 @@
 {
-    "permission_set": "self-join",
-    "name": "Agile Software Engineering",
-    "created_by_username": "Jan Van Reusel",
-    "description": "Collect information on agile software engineering practices",
-    "uri": "/data/groups/30",
-    "created_by_user_id": "7",
-    "primary_account_name": "Cegeka",
-    "primary_account_id": "4",
-    "group_id": "30",
-    "creation_date": "2011-09-09",
-    "workspace_count": 2,
-    "user_count": 70
+    "permission_set":"self-join",
+    "name":"Agile Software Engineering",
+    "created_by_username":"Jan Van Reusel",
+    "description":"Collect information on agile software engineering practices",
+    "uri":"/data/groups/30",
+    "created_by_user_id":"7",
+    "primary_account_name":"Cegeka",
+    "primary_account_id":"4",
+    "group_id":"30",
+    "creation_date":"2011-09-09",
+    "workspace_count":2,
+    "user_count":70
 }

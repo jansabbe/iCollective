@@ -25,14 +25,6 @@
 
     [[ICUser currentUser] setUsername:self.loginTextField.text andPassword:self.passwordTextField.text];
 
-    [[ICUser currentUser] configureRestKitAndRunIfUserCanLogin:^void() {
-        [self updateGuiEndedLogin];
-        [self.delegate loginViewControllerDidCorrectlyLogin:self];
-    } ifUserCannotLogin:^void() {
-        [self updateGuiEndedLogin];
-        [self.loginTextField becomeFirstResponder];
-        self.errorMessageLabel.hidden = NO;
-    }];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -56,8 +48,4 @@
     self.loginButton.enabled = YES;
 }
 
-- (void)viewDidUnload {
-    [self setErrorMessageLabel:nil];
-    [super viewDidUnload];
-}
 @end

@@ -1,17 +1,13 @@
-//
-//  Created by jansabbe on 30/03/12.
-//
-// To change the template use AppCode | Preferences | File Templates.
-//
-
-
 #import <Foundation/Foundation.h>
 #import <SenTestingKit/SenTestingKit.h>
 
+@class ICSocialTextAPI;
+@class NSManagedObjectContext;
 @class ICStubCoreDataContext;
 
 
-@interface DataModelTest : SenTestCase
+@interface ICSocialTextAPITest : SenTestCase
+@property (nonatomic) ICSocialTextAPI*socialTextClient;
 @property (nonatomic) ICStubCoreDataContext *coreDataContext;
 
 @end

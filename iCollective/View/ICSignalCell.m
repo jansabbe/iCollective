@@ -7,37 +7,23 @@
 //
 
 #import "ICSignalCell.h"
-#import "ICRestKitConfiguration.h"
-#import <RestKit/RestKit.h>
 
 @interface ICSignalCell () {
-    NSString* _senderPhotoUrl;
+    NSString *_senderPhotoUrl;
 }
 @end
 
 @implementation ICSignalCell
 
 
-- (void)request:(RKRequest *)request didLoadResponse:(RKResponse *)response {
-    if ([request.resourcePath isEqualToString:_senderPhotoUrl]) {
-        self.senderImage.image = [UIImage imageWithData:response.body];
-    }
-}
-
-- (void) setSenderPhotoUrl:(NSString *)senderPhotoUrl {
+- (void)setSenderPhotoUrl:(NSString *)senderPhotoUrl {
     _senderPhotoUrl = senderPhotoUrl;
     self.senderImage.image = [UIImage imageNamed:@"profile"];
-    [ICRestKitConfiguration fetchImage:senderPhotoUrl delegate:self];
 }
 
 - (void)setIsPartOfConversation:(BOOL)anIsPartOfConversation {
     [self.replyToImage setHidden:!anIsPartOfConversation];
 }
 
-
-
-- (void) dealloc {
-    [[ICRestKitConfiguration profilePicQueue] cancelRequestsWithDelegate:self];
-}
 
 @end

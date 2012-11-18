@@ -22,14 +22,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.senderLabel.text = self.signal.senderName;
+    self.senderLabel.text = self.signal.sender.fullName;
     self.timestampLabel.text = self.signal.fuzzyTimestamp;
-    [[RKClient sharedClient] get:self.signal.senderPhotoUrl usingBlock:^(RKRequest *request) {
-        request.delegate = self;
-        request.cacheTimeoutInterval = 24*60*60;        
-    }];
+
     [self.signalTextView loadHTMLString:[self bodyAsHtml]
-            baseURL:[NSURL URLWithString:@"https://cegeka.socialtext.net/"]];
+                                baseURL:[NSURL URLWithString:@"https://cegeka.socialtext.net/"]];
     [self.signalTextView setDelegate:self];
     [self.signalTextView.scrollView setScrollEnabled:NO];
     [self.signalTextView.scrollView setBounces:NO];
@@ -46,10 +43,6 @@
         return NO;
     }
     return YES;
-}
-
-- (void)request:(RKRequest *)request didLoadResponse:(RKResponse *)response {
-    self.profilePhotoView.image = [UIImage imageWithData:response.body];
 }
 
 - (NSString *)bodyAsHtml {
