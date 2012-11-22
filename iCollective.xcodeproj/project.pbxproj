@@ -79,6 +79,8 @@
 		D0B037058B8359DBE4918001 /* ICStubCoreDataContext.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B03AE6FC5A29F3E358121B /* ICStubCoreDataContext.m */; };
 		D0B0387C47C5DAB74303FDB2 /* ICSocialTextAPITest.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B037E945C21E2763474586 /* ICSocialTextAPITest.m */; };
 		D0B03B879FAA08CB1562B7E6 /* ICGroupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B03F724B698C95169FA8D8 /* ICGroupTableViewController.m */; };
+		D0B03B8B9D60CD1179EB3F0A /* ICIncrementalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B039AA96644B027019AD61 /* ICIncrementalStore.m */; };
+		D0B03E32BD6C798E900043C1 /* ICIncrementalStoreTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B03DA575642C3F0ACDB012 /* ICIncrementalStoreTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,12 +184,16 @@
 		56EC1B231653DCB8009ECB9D /* ICSocialTextAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSocialTextAPI.h; sourceTree = "<group>"; };
 		56EC1B241653DCB8009ECB9D /* ICSocialTextAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSocialTextAPI.m; sourceTree = "<group>"; };
 		81899716D7A247B6BBBADF06 /* libPods-iCollectiveTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iCollectiveTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0B030C5345DFE895784BCF5 /* ICIncrementalStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICIncrementalStore.h; sourceTree = "<group>"; };
 		D0B0357870596A1F374F78C8 /* ICSocialTextAPITest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSocialTextAPITest.h; sourceTree = "<group>"; };
 		D0B035C4E2FA7D66237A789F /* NSString+ICUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ICUtils.h"; sourceTree = "<group>"; };
 		D0B03606E46D6290D276A009 /* ICGroupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICGroupTableViewController.h; sourceTree = "<group>"; };
 		D0B037E945C21E2763474586 /* ICSocialTextAPITest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSocialTextAPITest.m; sourceTree = "<group>"; };
+		D0B039432C958034DD391C5C /* ICIncrementalStoreTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICIncrementalStoreTest.h; sourceTree = "<group>"; };
 		D0B03968B08311B53EC9C1B9 /* NSString+ICUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ICUtils.m"; sourceTree = "<group>"; };
+		D0B039AA96644B027019AD61 /* ICIncrementalStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICIncrementalStore.m; sourceTree = "<group>"; };
 		D0B03AE6FC5A29F3E358121B /* ICStubCoreDataContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICStubCoreDataContext.m; sourceTree = "<group>"; };
+		D0B03DA575642C3F0ACDB012 /* ICIncrementalStoreTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICIncrementalStoreTest.m; sourceTree = "<group>"; };
 		D0B03DBA1C8F06CF03D5D043 /* ICStubCoreDataContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICStubCoreDataContext.h; sourceTree = "<group>"; };
 		D0B03F724B698C95169FA8D8 /* ICGroupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICGroupTableViewController.m; sourceTree = "<group>"; };
 		DAE0CB10D135411E9BDD8E28 /* Pods-iCollectiveTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCollectiveTests.xcconfig"; path = "Pods/Pods-iCollectiveTests.xcconfig"; sourceTree = SOURCE_ROOT; };
@@ -275,7 +281,6 @@
 			children = (
 				5682A3FB156F7AC300C1D4F7 /* Resources */,
 				56B5D39B1525EC46007982F0 /* Domain */,
-				3923D757A0A4204A4B0F63B1 /* ICAppDelegate.m */,
 				3923D757A0A4204A4B0F63B0 /* ICAppDelegate.h */,
 				3923D757A0A4204A4B0F63A8 /* Supporting Files */,
 				3923D757A0A4204A4B0F63D4 /* Infrastructure */,
@@ -329,6 +334,9 @@
 				56EC1B241653DCB8009ECB9D /* ICSocialTextAPI.m */,
 				D0B03968B08311B53EC9C1B9 /* NSString+ICUtils.m */,
 				D0B035C4E2FA7D66237A789F /* NSString+ICUtils.h */,
+				D0B039AA96644B027019AD61 /* ICIncrementalStore.m */,
+				D0B030C5345DFE895784BCF5 /* ICIncrementalStore.h */,
+				3923D757A0A4204A4B0F63B1 /* ICAppDelegate.m */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -340,6 +348,8 @@
 				56B5D3A01525ECDC007982F1 /* DataModelTest.m */,
 				D0B037E945C21E2763474586 /* ICSocialTextAPITest.m */,
 				D0B0357870596A1F374F78C8 /* ICSocialTextAPITest.h */,
+				D0B03DA575642C3F0ACDB012 /* ICIncrementalStoreTest.m */,
+				D0B039432C958034DD391C5C /* ICIncrementalStoreTest.h */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -619,6 +629,7 @@
 				D0B03B879FAA08CB1562B7E6 /* ICGroupTableViewController.m in Sources */,
 				56EC1B251653DCB8009ECB9D /* ICSocialTextAPI.m in Sources */,
 				D0B034B2F0AAFE2A843C618E /* NSString+ICUtils.m in Sources */,
+				D0B03B8B9D60CD1179EB3F0A /* ICIncrementalStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,6 +643,7 @@
 				56B5D3A91525F2F200798312 /* ICSignalTest.m in Sources */,
 				D0B0387C47C5DAB74303FDB2 /* ICSocialTextAPITest.m in Sources */,
 				D0B037058B8359DBE4918001 /* ICStubCoreDataContext.m in Sources */,
+				D0B03E32BD6C798E900043C1 /* ICIncrementalStoreTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

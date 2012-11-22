@@ -49,7 +49,45 @@
     STAssertEqualObjects(expectedTimestamp, actualSignal.timestamp, nil);
 }
 
-- (NSManagedObjectContext*) context {
+- (void)testCanPersistAndLoadPerson {
+    ICPerson *person = [ICPerson personInContext:self.context];
+    person.personId= @"88";
+    person.fullName = @"hello";
+    person.username = @"ok";
+    [self.context save:NULL];
+
+    NSError *error;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Person"];
+    NSArray *results = [self.context executeFetchRequest:request error:&error];
+    STAssertNil(error, @"Error while fetching: %@", error);
+
+    ICPerson *actualPerson = results.lastObject;
+    STAssertNotNil(actualPerson, @"Fetch request should have returned atleast one result");
+    STAssertEqualObjects(person.fullName, actualPerson.fullName, nil);
+    STAssertEqualObjects(person.username, actualPerson.username, nil);
+    STAssertEqualObjects(person.personId, actualPerson.personId, nil);
+}
+
+- (void)testCanPersistAndLoadGroup {
+    ICGroup *signal = [ICGroup groupInContext:self.context];
+    signal.name = @"hello";
+    signal.groupId = @"23";
+    signal.groupDescription = @"expectedTimestamp";
+    [self.context save:NULL];
+
+    NSError *error;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Group"];
+    NSArray *results = [self.context executeFetchRequest:request error:&error];
+    STAssertNil(error, @"Error while fetching: %@", error);
+
+    ICGroup* actualSignal = results.lastObject;
+    STAssertNotNil(actualSignal, @"Fetch request should have returned atleast one result");
+    STAssertEqualObjects(signal.name, actualSignal.name, nil);
+    STAssertEqualObjects(signal.groupId, actualSignal.groupId, nil);
+    STAssertEqualObjects(signal.groupDescription, actualSignal.groupDescription, nil);
+}
+
+- (NSManagedObjectContext *)context {
     return self.coreDataContext.context;
 }
 @end

@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 #import "ICLoginViewController.h"
 
 @class ICSignal;
 @class ICGroup;
 
-@interface ICSignalTableViewController : UITableViewController <ICLoginViewControllerDelegate>
+@interface ICSignalTableViewController : UITableViewController <ICLoginViewControllerDelegate, NSFetchedResultsControllerDelegate>
 
 @property(nonatomic, strong) ICSignal *signal;
 

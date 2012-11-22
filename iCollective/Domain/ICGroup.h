@@ -16,4 +16,5 @@
 
 @property(nonatomic, strong) NSSet* signals;
 
++ (ICGroup *)groupInContext:(NSManagedObjectContext *)context;
 @end

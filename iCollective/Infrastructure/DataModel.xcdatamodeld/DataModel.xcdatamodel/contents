@@ -8,7 +8,6 @@
     </entity>
     <entity name="Person" representedClassName="ICPerson" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="firstLetterOfName" optional="YES" transient="YES" attributeType="String" syncable="YES"/>
         <attribute name="fullName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="homePhone" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mobilePhone" optional="YES" attributeType="String" syncable="YES"/>
@@ -17,21 +16,21 @@
         <attribute name="twitter" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="workPhone" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="liked" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Signal" inverseName="likers" inverseEntity="Signal" syncable="YES"/>
     </entity>
     <entity name="Signal" representedClassName="ICSignal" syncable="YES">
         <attribute name="body" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="numReplies" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="signalId" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="group" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Group" inverseName="signals" inverseEntity="Group" syncable="YES"/>
         <relationship name="inReplyToSignal" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Signal" inverseName="replies" inverseEntity="Signal" syncable="YES"/>
-        <relationship name="likers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" inverseName="liked" inverseEntity="Person" syncable="YES"/>
+        <relationship name="likers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" syncable="YES"/>
         <relationship name="replies" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Signal" inverseName="inReplyToSignal" inverseEntity="Signal" syncable="YES"/>
         <relationship name="sender" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Person" syncable="YES"/>
     </entity>
     <elements>
         <element name="Group" positionX="160" positionY="192" width="128" height="103"/>
-        <element name="Person" positionX="-162" positionY="441" width="128" height="208"/>
-        <element name="Signal" positionX="-450" positionY="288" width="128" height="163"/>
+        <element name="Person" positionX="-162" positionY="441" width="128" height="178"/>
+        <element name="Signal" positionX="-450" positionY="288" width="128" height="180"/>
     </elements>
 </model>

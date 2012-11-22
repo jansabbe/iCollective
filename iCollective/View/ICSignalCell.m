@@ -7,23 +7,27 @@
 //
 
 #import "ICSignalCell.h"
-
-@interface ICSignalCell () {
-    NSString *_senderPhotoUrl;
-}
-@end
+#import "ICSignal.h"
 
 @implementation ICSignalCell
 
 
-- (void)setSenderPhotoUrl:(NSString *)senderPhotoUrl {
-    _senderPhotoUrl = senderPhotoUrl;
-    self.senderImage.image = [UIImage imageNamed:@"profile"];
-}
-
 - (void)setIsPartOfConversation:(BOOL)anIsPartOfConversation {
     [self.replyToImage setHidden:!anIsPartOfConversation];
 }
+
+- (void)setSignal:(ICSignal *)signal {
+
+    self.signalTextLabel.text = signal.bodyAsPlainText;
+    self.senderNameLabel.text = signal.sender.fullName;
+    self.timestampLabel.text = signal.fuzzyTimestamp;
+    self.replyToImage.hidden = ![signal isPartOfConversation];
+    if ([signal isReplyToOtherSignal]) {
+        self.replyToImage.image = [UIImage imageNamed:@"transarrow"];
+    } else {
+        self.replyToImage.image = [UIImage imageNamed:@"speechbaloon"];
+    }
+};
 
 
 @end

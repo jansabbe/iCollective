@@ -25,6 +25,14 @@
 
     [[ICUser currentUser] setUsername:self.loginTextField.text andPassword:self.passwordTextField.text];
 
+    [[ICUser currentUser] ifUserCanLogin:^{
+        [self updateGuiEndedLogin];
+        [self.delegate loginViewControllerDidCorrectlyLogin:self];
+    } ifUserCannotLogin:^{
+        [self updateGuiEndedLogin];
+        [self.loginTextField becomeFirstResponder];
+        self.errorMessageLabel.hidden = NO;
+    }];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

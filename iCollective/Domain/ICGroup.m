@@ -14,6 +14,11 @@
 @dynamic name;
 @dynamic signals;
 
+
++ (ICGroup *)groupInContext:(NSManagedObjectContext *)context {
+    return [NSEntityDescription insertNewObjectForEntityForName:@"Group" inManagedObjectContext:context];
+}
+
 - (NSString *)groupPicUrl {
     return [NSString stringWithFormat:@"/groups/%@/photo/medium", self.groupId];
 }

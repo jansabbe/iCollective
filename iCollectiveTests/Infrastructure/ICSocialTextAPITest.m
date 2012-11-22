@@ -131,6 +131,65 @@
     STAssertEqualObjects(response[@"name"], @"Agile Software Engineering", nil);
 }
 
+
+- (void)testCanCallGetAttributesWithMinimalSignal{
+
+    NSDictionary *representation = @{
+        @"signal_id": @"11"
+    };
+    NSDictionary *response = [self.socialTextClient attributesForRepresentation:representation ofEntity:[self entity:@"Signal"] fromResponse:nil];
+
+    STAssertEqualObjects(response[@"signalId"], @"11", nil);
+}
+
+- (void)testCanCallGetAttributesWithMinimalPerson{
+    NSDictionary *representation = @{
+        @"id": @23
+    };
+    NSDictionary *response = [self.socialTextClient attributesForRepresentation:representation ofEntity:[self entity:@"Person"] fromResponse:nil];
+
+    STAssertEqualObjects(response[@"personId"], @"23", nil);
+}
+
+- (void)testCanCallGetAttributesWithMinimalGroup{
+    NSDictionary *representation = @{
+        @"group_id": @"21"
+    };
+    NSDictionary *response = [self.socialTextClient attributesForRepresentation:representation ofEntity:[self entity:@"Group"] fromResponse:nil];
+
+    STAssertEqualObjects(response[@"groupId"], @"21", nil);
+}
+
+
+
+- (void)testCanGetRelationshipsWithMinimalSignal{
+    NSDictionary *representation = @{
+        @"signal_id": @"11"
+    };
+    NSDictionary *response = [self.socialTextClient representationsForRelationshipsFromRepresentation:representation ofEntity:[self entity:@"Signal"] fromResponse:nil];
+
+    STAssertNotNil(response, nil);
+}
+
+- (void)testCanGetRelationshipsWithMinimalPerson{
+    NSDictionary *representation = @{
+    @"id": @23
+};
+    NSDictionary *response = [self.socialTextClient representationsForRelationshipsFromRepresentation:representation ofEntity:[self entity:@"Person"] fromResponse:nil];
+
+
+    STAssertNotNil(response, nil);
+}
+
+- (void)testCanGetRelationshipsWithMinimalGroup{
+    NSDictionary *representation = @{
+    @"group_id": @"21"
+};
+    NSDictionary *response = [self.socialTextClient representationsForRelationshipsFromRepresentation:representation ofEntity:[self entity:@"Group"] fromResponse:nil];
+
+    STAssertNotNil(response, nil);
+}
+
 - (NSFetchRequest *)fetchRequestForEntity:(NSString *)entityName {
     NSEntityDescription *signalEntityDescription = [self entity:entityName];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];

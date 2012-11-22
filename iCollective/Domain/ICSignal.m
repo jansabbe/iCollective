@@ -13,6 +13,7 @@
 @dynamic signalId;
 @dynamic body;
 @dynamic timestamp;
+@dynamic numReplies;
 @dynamic group;
 @dynamic inReplyToSignal;
 @dynamic sender;
@@ -25,6 +26,10 @@
 }
 
 - (NSString *)bodyAsPlainText {
+    if (!self.body) {
+        return nil;
+    }
+
     NSString *bodyInPlainText = self.body;
     NSRegularExpression *tags = [NSRegularExpression regularExpressionWithPattern:@"<.+?>"
                                                                           options:0
@@ -48,6 +53,18 @@
 
 - (NSString *)fuzzyTimestamp {
     return [self.timestamp timeAgo];
+}
+
+- (BOOL)isReplyToOtherSignal {
+    return self.inReplyToSignal != nil;
+}
+
+- (BOOL)isPartOfConversation {
+    return [self isReplyToOtherSignal] || [self hasReplies];
+}
+
+- (BOOL)hasReplies {
+    return (self.replies != nil && self.replies.count > 0);
 }
 
 @end

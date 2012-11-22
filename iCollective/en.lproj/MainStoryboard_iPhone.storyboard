@@ -7,7 +7,7 @@
         <!--Login View Controller-->
         <scene sceneID="wYY-l2-IMY">
             <objects>
-                <viewController id="feE-lY-DhM" customClass="ICLoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginViewController" id="feE-lY-DhM" customClass="ICLoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LNZ-6p-vqr">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

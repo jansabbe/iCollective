@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ICLoginViewController.h"
 
 
 @interface ICAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property(strong, nonatomic) UIWindow *window;
+
+- (NSManagedObjectContext *)managedObjectContext;
+
 
 @end

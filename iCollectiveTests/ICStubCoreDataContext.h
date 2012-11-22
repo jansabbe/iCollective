@@ -5,6 +5,7 @@
 @class NSPersistentStoreCoordinator;
 @class NSPersistentStore;
 @class NSManagedObjectContext;
+@class ICUser;
 
 @interface ICStubCoreDataContext : NSObject
 
@@ -14,6 +15,8 @@
 @property(nonatomic, strong) NSManagedObjectContext *context;
 
 + (ICStubCoreDataContext *)inMemoryContext;
+
++ (ICStubCoreDataContext *)socialTextContext:(ICUser *)user;
 
 
 @end

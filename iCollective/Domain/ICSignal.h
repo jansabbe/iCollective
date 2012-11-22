@@ -16,7 +16,7 @@
 @property(nonatomic, strong) NSString *signalId;
 @property(nonatomic, copy) NSString *body;
 @property(nonatomic, strong) NSDate *timestamp;
-
+@property(nonatomic, strong) NSNumber* numReplies;
 @property(nonatomic) ICGroup* group;
 @property(nonatomic) ICSignal* inReplyToSignal;
 @property(nonatomic) ICPerson* sender;
@@ -29,4 +29,7 @@
 
 - (NSString *)fuzzyTimestamp;
 
+- (BOOL)isReplyToOtherSignal;
+
+- (BOOL)isPartOfConversation;
 @end

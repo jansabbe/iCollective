@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class ICSignal;
+
 @interface ICSignalCell : UITableViewCell
 @property(weak, nonatomic) IBOutlet UILabel *signalTextLabel;
 @property(weak, nonatomic) IBOutlet UILabel *senderNameLabel;
@@ -17,4 +19,5 @@
 
 @property(strong, nonatomic) NSString *senderPhotoUrl;
 
+- (void) setSignal:(ICSignal *) signal;
 @end

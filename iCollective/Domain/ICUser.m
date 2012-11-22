@@ -40,6 +40,7 @@
     self.password = password;
 
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    _socialTextClient = nil;
     [userDefaults setObject:self.userName forKey:USERNAME_KEY];
     [userDefaults setObject:self.password forKey:PASSWORD_KEY];
     [userDefaults synchronize];

@@ -11,7 +11,9 @@
 
 static NSString *const kICSocialTextBaseURL = @"https://cegeka.socialtext.net/data";
 
-@implementation ICSocialTextAPI
+@implementation ICSocialTextAPI {
+    NSManagedObjectContext *_backingContext;
+}
 
 + (ICSocialTextAPI *)sharedClient {
     static dispatch_once_t dispatchOnce;
@@ -46,52 +48,77 @@ static NSString *const kICSocialTextBaseURL = @"https://cegeka.socialtext.net/da
 }
 
 - (NSDictionary *)attributesForRepresentation:(NSDictionary *)representation ofEntity:(NSEntityDescription *)entity fromResponse:(NSHTTPURLResponse *)response {
-    NSMutableDictionary * dictionary = [[super attributesForRepresentation:representation ofEntity:entity fromResponse:response] mutableCopy];
+
+    NSMutableDictionary *dictionary = [[super attributesForRepresentation:representation ofEntity:entity fromResponse:response] mutableCopy];
     if ([entity.name isEqualToString:@"Signal"]) {
         dictionary[@"signalId"] = representation[@"signal_id"];
-        dictionary[@"timestamp"] = [self parseDate:representation[@"at"]];
+        if (representation[@"at"]) {
+            dictionary[@"timestamp"] = [self parseDate:representation[@"at"]];
+        }
+        if (representation[@"num_replies"]) {
+            dictionary[@"numReplies"] = [NSNumber numberWithInt:[representation[@"num_replies"] intValue]];
+        }
     } else if ([entity.name isEqualToString:@"Group"]) {
         dictionary[@"groupId"] = representation[@"group_id"];
-        dictionary[@"groupDescription"] = representation[@"description"];
+        if (representation[@"description"]) {
+            dictionary[@"groupDescription"] = representation[@"description"];
+        }
     } else if ([entity.name isEqualToString:@"Person"]) {
         dictionary[@"personId"] = [representation[@"id"] description];
-        dictionary[@"fullName"] = representation[@"best_full_name"];
+        if (representation[@"best_full_name"]) {
+            dictionary[@"fullName"] = representation[@"best_full_name"];
+        }
     }
     return dictionary;
 }
 
 - (NSString *)resourceIdentifierForRepresentation:(NSDictionary *)representation ofEntity:(NSEntityDescription *)entity fromResponse:(NSHTTPURLResponse *)response {
+
+    NSString *result = nil;
     if ([entity.name isEqualToString:@"Signal"]) {
-        return representation[@"signal_id"];
+        result = [NSString stringWithFormat:@"/signals/%@", representation[@"signal_id"]];
     } else if ([entity.name isEqualToString:@"Group"]) {
-        return representation[@"group_id"];
+        result = [NSString stringWithFormat:@"/groups/%@", representation[@"group_id"]];
+    } else if ([entity.name isEqualToString:@"Person"]) {
+        result = [NSString stringWithFormat:@"/people/%@", representation[@"id"]];
     }
-    return [super resourceIdentifierForRepresentation:representation ofEntity:entity fromResponse:response];
+    NSAssert(result != nil, @"should not be nil for %@", representation);
+
+    return result;
 }
 
 - (NSDictionary *)representationsForRelationshipsFromRepresentation:(NSDictionary *)representation ofEntity:(NSEntityDescription *)entity fromResponse:(NSHTTPURLResponse *)response {
     NSMutableDictionary *dictionary = [[super representationsForRelationshipsFromRepresentation:representation ofEntity:entity fromResponse:response] mutableCopy];
     if ([entity.name isEqualToString:@"Signal"]) {
-        dictionary[@"sender"] = @{
-            @"id": representation[@"user_id"],
-            @"best_full_name": representation[@"best_full_name"]
-        };
 
+        if (representation[@"user_id"] && representation[@"best_full_name"]) {
+            dictionary[@"sender"] = @{
+            @"id": representation[@"user_id"], @"best_full_name": representation[@"best_full_name"]
+            };
+        }
         if (representation[@"likers"]) {
             NSMutableArray *likerDictionaries = [NSMutableArray array];
 
             for (NSString *likerId in representation[@"likers"]) {
-                [likerDictionaries addObject:@{@"id": likerId}];
+                [likerDictionaries addObject:@{
+                @"id": likerId
+                }];
             }
             dictionary[@"likers"] = likerDictionaries;
         }
 
+        dictionary[@"likers"] = [NSNull null];
+
         if (representation[@"in_reply_to"]) {
-            dictionary[@"inReplyToSignal"] = @{@"signal_id": [representation valueForKeyPath:@"in_reply_to.signal_id"]};
+            dictionary[@"inReplyToSignal"] = @{
+            @"signal_id": [representation valueForKeyPath:@"in_reply_to.signal_id"]
+            };
         }
 
         if (representation[@"group_ids"] && [representation[@"group_ids"] count] > 0) {
-            dictionary[@"group"] = @{ @"group_id": [representation[@"group_ids"] lastObject] };
+            dictionary[@"group"] = @{
+            @"group_id": [representation[@"group_ids"] lastObject]
+            };
         }
     }
 
@@ -99,12 +126,13 @@ static NSString *const kICSocialTextBaseURL = @"https://cegeka.socialtext.net/da
 }
 
 - (BOOL)shouldFetchRemoteValuesForRelationship:(NSRelationshipDescription *)relationship forObjectWithID:(NSManagedObjectID *)objectID inManagedObjectContext:(NSManagedObjectContext *)context {
-    return [relationship.name isEqualToString:@"replies"];
+    return NO;
 }
 
 - (BOOL)shouldFetchRemoteAttributeValuesForObjectWithID:(NSManagedObjectID *)objectID inManagedObjectContext:(NSManagedObjectContext *)context {
-    return YES;
+    return NO;
 }
+
 
 - (NSDate *)parseDate:(NSString *)date {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -115,19 +143,19 @@ static NSString *const kICSocialTextBaseURL = @"https://cegeka.socialtext.net/da
 
 - (NSMutableURLRequest *)requestForFetchRequest:(NSFetchRequest *)fetchRequest withContext:(NSManagedObjectContext *)context {
     NSMutableURLRequest *request = [super requestForFetchRequest:fetchRequest withContext:context];
-    NSLog(@"requestForFetchRequest: %@", request);
+    NSLog(@"requestForFetchRequest: %@ using %@", request.URL, fetchRequest);
     return request;
 }
 
 - (NSMutableURLRequest *)requestWithMethod:(NSString *)method pathForObjectWithID:(NSManagedObjectID *)objectID withContext:(NSManagedObjectContext *)context {
     NSMutableURLRequest *request = [super requestWithMethod:method pathForObjectWithID:objectID withContext:context];
-    NSLog(@"requestForFetchRequest: %@", request);
+    NSLog(@"requestWithMethod: %@ pathForObjectWithID: %@", request.URL, objectID);
     return request;
 }
 
 - (NSMutableURLRequest *)requestWithMethod:(NSString *)method pathForRelationship:(NSRelationshipDescription *)relationship forObjectWithID:(NSManagedObjectID *)objectID withContext:(NSManagedObjectContext *)context {
     NSMutableURLRequest *request = [super requestWithMethod:method pathForRelationship:relationship forObjectWithID:objectID withContext:context];
-    NSLog(@"requestForFetchRequest: %@", request);
+    NSLog(@"requestForFetchRequest: %@ pathForRelationship: %@ forObjectWithID: %@", request.URL, relationship.name, objectID);
     return request;
 }
 
