@@ -126,11 +126,11 @@ static NSString *const kICSocialTextBaseURL = @"https://cegeka.socialtext.net/da
 }
 
 - (BOOL)shouldFetchRemoteValuesForRelationship:(NSRelationshipDescription *)relationship forObjectWithID:(NSManagedObjectID *)objectID inManagedObjectContext:(NSManagedObjectContext *)context {
-    return NO;
+    return NO; //[relationship.name isEqualToString:@"replies"];
 }
 
 - (BOOL)shouldFetchRemoteAttributeValuesForObjectWithID:(NSManagedObjectID *)objectID inManagedObjectContext:(NSManagedObjectContext *)context {
-    return NO;
+    return YES;
 }
 
 

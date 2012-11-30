@@ -1,0 +1,4 @@
+Documentation set was installed to Xcode!
+
+Path: /Users/jansabbe/Library/Developer/Shared/Documentation/DocSets/org.cocoapods.AFIncrementalStore-0.3.1.docset
+Time: 2012-11-14 10:21:12 +0000

@@ -1,0 +1,15 @@
+
+PODS:
+- AFIncrementalStore (0.3.1):
+  - AFNetworking (>= 0.9.0)
+- AFNetworking (1.0.1)
+
+DEPENDENCIES:
+- AFIncrementalStore (= 0.3.1)
+- AFNetworking (= 1.0.1)
+
+SPEC CHECKSUMS:
+  AFIncrementalStore: aed50c647af3b3df5793d1e74c482454044e8e37
+  AFNetworking: 4c11f857c9a18d65f4257c90a1e74ac49f0ac422
+
+COCOAPODS: 0.15.2

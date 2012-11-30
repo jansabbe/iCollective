@@ -1,0 +1,4 @@
+Documentation set was installed to Xcode!
+
+Path: /Users/jansabbe/Library/Developer/Shared/Documentation/DocSets/org.cocoapods.AFNetworking-1.0.1.docset
+Time: 2012-11-14 10:21:36 +0000

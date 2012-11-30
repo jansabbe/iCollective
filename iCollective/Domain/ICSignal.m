@@ -64,7 +64,7 @@
 }
 
 - (BOOL)hasReplies {
-    return (self.replies != nil && self.replies.count > 0);
+    return self.numReplies && self.numReplies.intValue > 0;
 }
 
 @end

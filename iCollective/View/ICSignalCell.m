@@ -8,6 +8,7 @@
 
 #import "ICSignalCell.h"
 #import "ICSignal.h"
+#import <AFNetworking/AFNetworking.h>
 
 @implementation ICSignalCell
 
@@ -27,6 +28,8 @@
     } else {
         self.replyToImage.image = [UIImage imageNamed:@"speechbaloon"];
     }
+    NSMuURLRequest
+    self.senderImage
 };
 
 
